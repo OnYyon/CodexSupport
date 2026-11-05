@@ -1,0 +1,2055 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light"><title>C++ / Вспомнить и написать</title>
+<style>
+:root{--paper:#f7f7f4;--ink:#202220;--muted:#71756d;--line:#dcdfd6;--accent:#dc562f;--soft:#f1e6dc;--green:#416345}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select{font:inherit}button,a,input,select{touch-action:manipulation}a{color:inherit;text-decoration-color:#a9afa0;text-underline-offset:4px}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:4px}header{position:sticky;top:0;background:#f7f7f4ed;backdrop-filter:blur(16px);border-bottom:1px solid var(--line);z-index:10}.bar{max-width:1400px;margin:auto;padding:15px 32px;display:flex;align-items:center;gap:26px}.logo{font-size:24px;font-weight:850;text-decoration:none;letter-spacing:-1px}.logo em{font-style:normal;color:var(--accent)}.topnav{display:flex;gap:8px;margin-left:auto}.topnav button,.pill{border:1px solid var(--line);border-radius:30px;background:transparent;padding:8px 18px}.topnav button.active{background:var(--ink);color:white;border-color:var(--ink)}.shell{max-width:1340px;margin:0 auto;padding:0 32px}.hero{padding:70px 0 56px;display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center}.eyebrow{font:12px ui-monospace,monospace;letter-spacing:2px;color:var(--accent);text-transform:uppercase}h1,h2,h3,p{margin-top:0}.hero h1{font-size:clamp(42px,5.5vw,74px);line-height:1.04;letter-spacing:-3px;margin:18px 0 24px}.hero h1 em{font-style:normal;color:var(--accent)}.hero p{max-width:540px;color:var(--muted);font-size:18px}.primary{background:var(--accent);color:white;border:0;padding:13px 22px;border-radius:8px}.secondary{background:white;border:1px solid var(--line);padding:11px 19px;border-radius:8px}.hero-actions{display:flex;gap:10px;flex-wrap:wrap}.editor{background:#202720;color:#eef1e8;border-radius:14px;overflow:hidden;box-shadow:0 25px 50px #20272018;transform:rotate(1deg)}.editor-bar{padding:12px 20px;border-bottom:1px solid #ffffff20;display:flex;gap:8px;font:12px ui-monospace,monospace;color:#b3bdad}.dot{width:8px;height:8px;border-radius:50%;background:#7d8e73;align-self:center}.editor pre{background:transparent;padding:26px;margin:0;font-size:14px;line-height:1.9;color:#edf0e8}.editor footer{padding:14px 22px;border-top:1px solid #ffffff20;font-size:13px;color:#c8d0c1}.orange{color:#f2a47f}.stats{display:grid;grid-template-columns:repeat(3,1fr);border-block:1px solid var(--line);margin-bottom:42px}.stat{padding:18px 22px;border-right:1px solid var(--line)}.stat:last-child{border:0}.stat strong{font-size:26px;letter-spacing:-1px}.stat span{font-size:13px;color:var(--muted);margin-left:12px}.layout{display:grid;grid-template-columns:245px minmax(0,1fr);gap:55px;align-items:start}.sidebar{position:sticky;top:94px;max-height:calc(100vh - 110px);overflow:auto;padding-bottom:24px}.side-title{font:11px ui-monospace,monospace;color:var(--muted);letter-spacing:2px;margin-bottom:16px}.sidebar nav a{display:flex;gap:12px;text-decoration:none;font-size:13px;line-height:1.4;padding:12px 9px;border-radius:7px}.sidebar a:hover,.sidebar a.current{background:#e9ece3}.sidebar a span{font:12px ui-monospace,monospace;color:var(--accent);padding-top:2px}.meter{margin:24px 0 8px;height:5px;border-radius:5px;background:var(--line);overflow:hidden}.meter i{display:block;height:100%;background:var(--green)}.small{font-size:12px;color:var(--muted)}.toolbar{display:flex;gap:10px;align-items:center;margin-bottom:24px;flex-wrap:wrap}.toolbar input{flex:1;min-width:180px;background:white;border:1px solid var(--line);border-radius:8px;padding:10px 14px}.toolbar select{max-width:100%;border:1px solid var(--line);border-radius:8px;padding:10px;background:white}.toolbar button{border:0;color:var(--muted);background:transparent;font-size:13px}.lesson{margin-bottom:50px;scroll-margin-top:100px}.lesson>h1{font-size:30px;line-height:1.2;letter-spacing:-1px;margin-bottom:24px}.topic{background:white;border:1px solid var(--line);border-radius:10px;margin-bottom:12px;scroll-margin-top:100px}.topic>summary{list-style:none;cursor:pointer;padding:20px 22px;display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:17px;font-weight:650;line-height:1.4}.topic>summary::-webkit-details-marker{display:none}.topic>summary b{font-size:22px;font-weight:400;color:var(--muted)}.topic[open]>summary b{transform:rotate(45deg)}.topic[open]>summary{border-bottom:1px solid var(--line)}.topic-body{padding:24px;overflow-wrap:anywhere}.topic-body h3{font-size:20px;margin:30px 0 12px}.topic-body h3:first-child{margin-top:0}.topic-body p{margin-bottom:16px}.topic-body img{max-width:100%;height:auto;border-radius:8px}pre{background:#202720;color:#edf0e8;padding:20px;border-radius:9px;overflow:auto;font:13px/1.8 ui-monospace,SFMono-Regular,Consolas,monospace;tab-size:4}code{font:0.87em ui-monospace,SFMono-Regular,Consolas,monospace}p code,li code,td code{background:#eff0e9;padding:2px 5px;border-radius:4px}pre code{font:inherit}table{border-collapse:collapse;display:block;max-width:100%;overflow:auto;font-size:14px;margin:18px 0 24px}th,td{text-align:left;padding:12px;border:1px solid var(--line);vertical-align:top;min-width:110px}th{background:#f1f3eb}blockquote{margin:20px 0;border-left:3px solid var(--accent);padding-left:18px;color:var(--muted)}hr{border:0;border-top:1px solid var(--line);margin:28px 0}.study-panel{min-height:480px;background:white;border:1px solid var(--line);border-radius:16px;padding:32px;margin-bottom:32px}.study-panel h2{font-size:30px;line-height:1.25;letter-spacing:-1px}.study-panel .label{font:12px ui-monospace,monospace;color:var(--accent);margin-bottom:24px}.study-panel .answer{border-top:1px solid var(--line);padding-top:24px;margin-top:28px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}.choice{display:block;width:100%;text-align:left;margin:10px 0;border:1px solid var(--line);border-radius:8px;padding:14px 18px;background:#fafbf7}.choice:disabled{cursor:default;color:inherit;opacity:1}.choice.good{border-color:#60805d;background:#eef5e9}.choice.bad{border-color:#bb603c;background:#fff0e9}.feedback{background:#f0f3ea;padding:18px;border-radius:8px;margin-top:20px}.counter{color:var(--muted);margin-bottom:20px;font-size:13px}.empty{padding:40px;border:1px dashed var(--line);border-radius:10px;text-align:center}.page-footer{border-top:1px solid var(--line);padding:30px 0;margin-top:50px;color:var(--muted);font-size:12px}.status{min-height:22px;color:var(--muted);font-size:12px}.mode-desc{color:var(--muted);margin-bottom:20px}[hidden]{display:none!important}.end-links{margin:20px 0;font-size:13px}.progress-line{display:flex;justify-content:space-between;gap:8px}.print-title{display:none}@media(max-width:950px){.hero{gap:30px}.layout{grid-template-columns:200px minmax(0,1fr);gap:24px}.bar,.shell{padding-inline:20px}.hero h1{letter-spacing:-2px}}@media(max-width:700px){.bar{gap:12px;flex-wrap:wrap;padding:12px 16px}.logo{font-size:20px}.topnav{gap:4px}.topnav button{padding:6px 10px;font-size:12px}.shell{padding:0 16px}.hero{grid-template-columns:1fr;padding:36px 0;gap:28px}.hero h1{font-size:48px}.editor{transform:none}.layout{display:block}.sidebar{position:static;max-height:none}.sidebar nav{display:flex;overflow:auto;gap:6px;padding-bottom:12px}.sidebar nav a{flex:0 0 190px;background:#edf0e7}.side-title,.sidebar .meter,.sidebar .progress-line{display:none}.stats{margin-bottom:20px}.stat{padding:12px 8px}.stat strong{font-size:21px}.stat span{display:block;margin:0;font-size:11px}.topic>summary{padding:16px;font-size:15px}.topic-body{padding:16px}.study-panel{padding:22px}.study-panel h2{font-size:25px}.hero p{font-size:16px}.toolbar{gap:8px}.toolbar select{flex:1;min-width:180px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}@media print{header,.hero,.stats,.sidebar,.toolbar,.page-footer,#training{display:none!important}.layout{display:block}.shell{max-width:none;padding:0}details{break-inside:avoid}details:not([open])>.topic-body{display:block}summary b{display:none}.topic{border:0}pre{white-space:pre-wrap;background:#eee;color:#111}.lesson{display:block!important}#reading{display:block!important}}
+</style></head><body id="top">
+<header><div class="bar"><a class="logo" href="#top">C<em>++</em> / study</a><span class="small">ООП · C++20</span><nav class="topnav" aria-label="Режим обучения"><button data-mode="read" class="active" aria-pressed="true">Конспект</button><button data-mode="cards" aria-pressed="false">Карточки</button><button data-mode="quiz" aria-pressed="false">Проверка</button></nav></div></header>
+<div class="shell"><section class="hero"><div><div class="eyebrow">Контрольная / лекции 01–08</div><h1>Понять.<br>Вспомнить.<br><em>Написать.</em></h1><p>ООП и особенности C++ — по порядку, от первого объявления до наследования. Сначала ответь сам, затем открой объяснение.</p><div class="hero-actions"><button class="primary" id="start-init">Разобрать инициализацию</button><button class="secondary" data-mode="quiz">Проверить себя</button></div></div><div class="editor"><div class="editor-bar"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span style="margin-left:auto">initialization.cpp</span></div><pre><span style="color:#9eaf92">// Похожая запись. Разный результат.</span>
+std::vector&lt;int&gt; a<span class="orange">(3, 7)</span>;
+std::vector&lt;int&gt; b<span class="orange">{3, 7}</span>;
+
+<span style="color:#9eaf92">// Сколько элементов в каждом?</span>
+<span style="color:#9eaf92">// Объясни, какой конструктор выбран.</span></pre><footer>Не угадывай вывод. Найди правило, которое его определяет.</footer></div></section>
+<div class="stats"><div class="stat"><strong>08</strong><span>лекций по порядку</span></div><div class="stat"><strong>42</strong><span>карточек для повторения</span></div><div class="stat"><strong>26</strong><span>вопросов по коду</span></div></div>
+<div class="layout"><aside class="sidebar"><div class="side-title">МАРШРУТ ПОДГОТОВКИ</div><nav aria-label="Лекции"><a href="#lecture-1" data-lesson="1"><span>01</span>Язык, компиляция, инструменты и типы</a><a href="#lecture-2" data-lesson="2"><span>02</span>Операторы, ввод-вывод, ветвления и циклы</a><a href="#lecture-3" data-lesson="3"><span>03</span>Память, указатели, ссылки и категории значений</a><a href="#lecture-4" data-lesson="4"><span>04</span>Функции и разрешение перегрузки</a><a href="#lecture-5" data-lesson="5"><span>05</span>Классы и инкапсуляция</a><a href="#lecture-6" data-lesson="6"><span>06</span>Конструкторы, деструкторы, RAII и copy/move</a><a href="#lecture-7" data-lesson="7"><span>07</span>Перегрузка операторов</a><a href="#lecture-8" data-lesson="8"><span>08</span>Наследование</a></nav><div class="end-links"><a href="#extra-10" id="summary-link">Сводка и тренировочная работа</a></div><div class="meter"><i id="progress-bar" style="width:0%"></i></div><div class="progress-line"><span class="small">Запомнил карточек</span><span class="small" id="progress-text">0</span></div></aside><main id="workspace"><div class="toolbar"><input id="search" type="search" aria-label="Поиск по материалу" placeholder="Найти: explicit, const, RAII…"><select id="lecture-filter" aria-label="Выбор лекции"><option value="all">Все лекции</option><option value="1">Лекция 1</option><option value="2">Лекция 2</option><option value="3">Лекция 3</option><option value="4">Лекция 4</option><option value="5">Лекция 5</option><option value="6">Лекция 6</option><option value="7">Лекция 7</option><option value="8">Лекция 8</option></select><button id="expand">Раскрыть всё</button><button id="collapse">Свернуть всё</button></div><p class="status" id="status" role="status" aria-live="polite"></p><div id="reading"><section class="lesson" id="lecture-1" data-lecture="1"><h1 id="лекция-1-язык-компиляция-инструменты-и-типы">Лекция 1. Язык, компиляция, инструменты и типы</h1>
+<details class="topic"  id="11-что-такое-c-и-зачем-он-нужен"><summary><span>1.1. Что такое C++ и зачем он нужен</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<p>C++ — <strong>компилируемый мультипарадигменный язык</strong>: поддерживает процедурный стиль, ООП, обобщённое и функциональное программирование. Объектно-ориентированное программирование связывает <strong>состояние</strong> (поля объекта) и <strong>поведение</strong> (методы), контролирует доступ и позволяет моделировать отношения между типами. C++ добавляет к этому управление временем жизни объектов, шаблоны, перегрузку, стандартные контейнеры и RAII.</p>
+<p>Важные стандарты: <strong>C++11</strong> (<code>auto</code>, <code>nullptr</code>, move, лямбды); <strong>C++14</strong> (улучшения <code>constexpr</code>); <strong>C++17</strong> (<code>if constexpr</code>, structured bindings, <code>std::optional</code>); <strong>C++20</strong> (<code>concepts</code>, <code>ranges</code>, <code>&lt;=&gt;</code>, <code>std::span</code>, <code>std::numbers</code>, <code>consteval</code>). Если на контрольной разрешён C++20, не нужно ограничиваться синтаксисом C++11.</p>
+</div></details><details class="topic"  id="12-структура-программы"><summary><span>1.2. Структура программы</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">#include &lt;iostream&gt;            // объявление std::cout
+
+int main() {                   // точка входа
+    std::cout &lt;&lt; &quot;Hello!\n&quot;;  // печать
+    return 0;                  // успешное завершение
+}
+</code></pre>
+<p><code>#include</code> обрабатывается препроцессором; <code>std::</code> — квалификация имени в пространстве имён; <code>main</code> возвращает <code>int</code>, а отсутствие явного <code>return</code> в конце <code>main</code> равнозначно <code>return 0</code>. Допустима также форма <code>int main(int argc, char* argv[])</code>: <code>argc</code> — число аргументов, <code>argv</code> — их C-строки.</p>
+<p><strong>Объявление</strong> сообщает компилятору о существовании сущности: <code>int sum(int, int);</code>. <strong>Определение</strong> создаёт её реализацию: <code>int sum(int a, int b) { return a + b; }</code>. Для переменных <code>extern int count;</code> обычно только объявляет, а <code>int count = 0;</code> определяет.</p>
+</div></details><details class="topic"  id="13-как-исходный-код-становится-программой"><summary><span>1.3. Как исходный код становится программой</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<p>Препроцессор обрабатывает исходные файлы и заголовки, формируя единицу трансляции. Компилятор создаёт объектный файл. Компоновщик объединяет его с другими объектными файлами и библиотеками в исполняемый файл, который затем загружается и запускается.</p>
+<ol>
+<li><strong>Препроцессор</strong> раскрывает <code>#include</code>, макросы и условную компиляцию (<code>g++ -E main.cpp -o main.i</code>).</li>
+<li><strong>Компилятор</strong> анализирует синтаксис и типы и генерирует объектный файл (<code>g++ -std=c++20 -c main.cpp -o main.o</code>).</li>
+<li><strong>Компоновщик</strong> связывает определения функций между объектными файлами (<code>g++ main.o utils.o -o app</code>).</li>
+<li><strong>Загрузчик</strong> ОС размещает программу в памяти и запускает её.</li>
+</ol>
+<p>Если написать <code>void f(); int main(){f();}</code> без определения <code>f</code>, компиляция отдельного файла может пройти, а компоновка выдаст <code>undefined reference</code>. Если не закрыта скобка, это <strong>ошибка компиляции</strong>. Если обращение идёт за пределы массива — программа может собраться, но при выполнении возникает <strong>undefined behavior (UB)</strong>.</p>
+<h3 id="odr-one-definition-rule">ODR — One Definition Rule</h3>
+<p>В каждой единице трансляции нельзя иметь два определения одного и того же определяемого объекта. Для обычной функции с внешней связью программа должна иметь одно определение; специальные правила разрешают идентичные определения <code>inline</code>-функций, шаблонов и типов в разных единицах трансляции.</p>
+<pre><code class="language-cpp">// math.hpp
+#pragma once
+int add(int a, int b);             // объявление
+inline int square(int x) { return x*x; } // допустимо в заголовке
+
+// math.cpp
+#include &quot;math.hpp&quot;
+int add(int a, int b) { return a+b; } // определение
+</code></pre>
+<p><strong>Ловушка:</strong> определение обычной не-<code>inline</code> функции в <code>.hpp</code>, включённом в два <code>.cpp</code>, часто приводит к <code>multiple definition</code>. <code>#pragma once</code> защищает только от повторного включения заголовка в <strong>одну</strong> единицу трансляции; оно не устраняет нарушение ODR между разными <code>.cpp</code>.</p>
+</div></details><details class="topic"  id="14-make-cmake-google-test-и-отладка"><summary><span>1.4. make, CMake, Google Test и отладка</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<p><code>make</code> использует правила вида <code>цель: зависимости</code>, затем <strong>команду с отступом табуляцией</strong>. При изменении зависимости пересобирает нужные цели.</p>
+<pre><code class="language-makefile">app: main.o math.o
+    g++ main.o math.o -o app
+
+main.o: main.cpp math.hpp
+    g++ -std=c++20 -Wall -Wextra -c main.cpp -o main.o
+</code></pre>
+<p>CMake описывает проект на более высоком уровне:</p>
+<pre><code class="language-cmake">cmake_minimum_required(VERSION 3.16)
+project(OOP LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+add_executable(app main.cpp math.cpp)
+target_compile_options(app PRIVATE -Wall -Wextra -Wpedantic)
+</code></pre>
+<pre><code class="language-bash">cmake -S . -B build -DCMAKE_BUILD_TYPE=Debug
+cmake --build build
+./build/app
+</code></pre>
+<p><code>Debug</code> обычно содержит <code>-g -O0</code>; <code>Release</code> оптимизирует. Для поиска ошибок полезны <code>gdb ./build/app</code>, команды <code>break main</code>, <code>run</code>, <code>next</code>, <code>step</code>, <code>print x</code>, <code>backtrace</code>. В Google Test тест выглядит так:</p>
+<pre><code class="language-cpp">#include &lt;gtest/gtest.h&gt;
+TEST(Math, Add) {
+    EXPECT_EQ(5, add(2, 3));
+    ASSERT_EQ(0, add(-1, 1));
+}
+</code></pre>
+<p><code>EXPECT_*</code> фиксирует неудачу и продолжает тест, <code>ASSERT_*</code> прерывает текущую тестовую функцию. Наличие Google Test требует отдельной настройки зависимостей/сборки.</p>
+</div></details><details class="topic"  id="15-типы-литералы-размеры"><summary><span>1.5. Типы, литералы, размеры</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<table>
+<thead>
+<tr>
+<th>Тип</th>
+<th>Смысл</th>
+<th>Пример</th>
+<th>Тонкость</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>bool</code></td>
+<td>логическое значение</td>
+<td><code>true</code></td>
+<td>не обязательно 1 байт по стандарту</td>
+</tr>
+<tr>
+<td><code>char</code></td>
+<td>символьный/байтовый тип</td>
+<td><code>'A'</code></td>
+<td>signedness обычного <code>char</code> зависит от реализации</td>
+</tr>
+<tr>
+<td><code>int</code></td>
+<td>целое со знаком</td>
+<td><code>42</code></td>
+<td>обычно 32 бита, но не гарантировано</td>
+</tr>
+<tr>
+<td><code>unsigned</code></td>
+<td>беззнаковое</td>
+<td><code>42u</code></td>
+<td>переполнение по модулю 2^N</td>
+</tr>
+<tr>
+<td><code>long long</code></td>
+<td>целое не менее 64 бит</td>
+<td><code>42LL</code></td>
+<td>точная ширина зависит от платформы</td>
+</tr>
+<tr>
+<td><code>float</code></td>
+<td>плавающая точка</td>
+<td><code>1.5f</code></td>
+<td>ограниченная точность</td>
+</tr>
+<tr>
+<td><code>double</code></td>
+<td>плавающая точка</td>
+<td><code>1.5</code></td>
+<td>обычно IEEE 754 binary64</td>
+</tr>
+<tr>
+<td><code>std::string</code></td>
+<td>строковый объект</td>
+<td><code>"hi"s</code></td>
+<td>суффикс <code>s</code> требует соответствующего namespace литералов</td>
+</tr>
+</tbody>
+</table>
+<p><code>sizeof(T)</code> возвращает размер <strong>в байтах</strong> типа <code>std::size_t</code>; <code>sizeof(char) == 1</code> по определению. Размер указателя зависит от платформы (часто 8 байт в 64-битной программе), а не от типа объекта, на который он указывает. <code>sizeof(arr)</code> для настоящего массива даёт размер всего массива, а для указателя — размер указателя.</p>
+<pre><code class="language-cpp">int a = 10;             // десятичный
+int b = 0b1010;         // двоичный: 10
+int c = 0xFF;           // шестнадцатеричный: 255
+int d = 1'000'000;      // разделители разрядов
+unsigned long long n = 10ULL;
+double e = 1.2e3;       // 1200.0
+</code></pre>
+</div></details><details class="topic"  id="16-инициализация-крайне-важная-тема" open><summary><span>1.6. Инициализация — крайне важная тема</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<p>Инициализация задаёт начальное состояние <strong>при создании</strong> объекта. Присваивание меняет уже существующий объект. Сначала найдите в строке объявление нового объекта: знак <code>=</code> сам по себе не означает вызов оператора присваивания.</p>
+<pre><code class="language-cpp">int a = 5; // создаём a: инициализация
+int b{a};  // создаём b: инициализация
+b = 9;     // b уже существует: присваивание
+</code></pre>
+<h3 id="161-формы-записи-что-именно-они-означают">1.6.1. Формы записи: что именно они означают</h3>
+<table>
+<thead>
+<tr>
+<th>Запись</th>
+<th>Название</th>
+<th>Для локального int</th>
+<th>Особенность для классов</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>T x;</code></td>
+<td>Default-initialization</td>
+<td>Значение не задано</td>
+<td>Вызывается подходящий конструктор без аргументов</td>
+</tr>
+<tr>
+<td><code>T x = value;</code></td>
+<td>Copy-initialization</td>
+<td>Начальное значение из value</td>
+<td>Не использует explicit-конструктор для такого преобразования</td>
+</tr>
+<tr>
+<td><code>T x(value);</code></td>
+<td>Direct-initialization</td>
+<td>Начальное значение из value</td>
+<td>Может использовать explicit-конструктор</td>
+</tr>
+<tr>
+<td><code>T x{value};</code></td>
+<td>Direct-list-initialization</td>
+<td>Запрет narrowing</td>
+<td>Агрегатная инициализация либо выбор конструктора</td>
+</tr>
+<tr>
+<td><code>T x = {value};</code></td>
+<td>Copy-list-initialization</td>
+<td>Запрет narrowing</td>
+<td>Ошибка, если выбран explicit-конструктор</td>
+</tr>
+<tr>
+<td><code>int x{};</code></td>
+<td>Пустая list-initialization, затем value-initialization</td>
+<td>Ноль</td>
+<td>Для произвольного T поведение зависит от типа и конструкторов</td>
+</tr>
+</tbody>
+</table>
+<p>Название copy-initialization <strong>не гарантирует фактическое копирование</strong>. Например, <code>std::string s = "hi";</code> конструирует строку из C-строки, а <code>T x = T{};</code> при подходящих условиях C++17+ создаёт объект сразу на месте без copy/move.</p>
+<h3 id="162-когда-получается-ноль-а-когда-значение-не-задано">1.6.2. Когда получается ноль, а когда значение не задано</h3>
+<pre><code class="language-cpp">int global;                 // статическое хранение: 0
+int main() {
+    int a;                  // автоматический int: неопределённое значение
+    int b{};                // 0
+    static int c;           // статическое хранение: 0
+    int* p = new int;       // выделенный int: неопределённое значение
+    int* q = new int{};     // 0
+    // Не читаем a и *p до присваивания!
+    delete p;
+    delete q;
+}
+</code></pre>
+<p>Для этих <code>int</code> чтение неопределённого значения в C++20 приводит к UB. Само объявление <code>int a;</code> и последующее присваивание <code>a = 10;</code> допустимы. Не следует объяснять это как «всегда случайное число»: определённого результата стандарт не обещает.</p>
+<p><strong>Правило для запоминания:</strong> локальный скаляр без инициализатора не получает автоматически ноль. Объекты со статическим хранением проходят статическую инициализацию; в примере <code>global</code> и <code>c</code> нулевые. Классы нужно анализировать отдельно: <code>std::string name;</code> создаёт корректную пустую строку через конструктор.</p>
+<h3 id="163-фигурные-скобки-и-narrowing">1.6.3. Фигурные скобки и narrowing</h3>
+<pre><code class="language-cpp">int a = 3.14;             // 3: дробная часть отбрасывается
+int b(3.14);              // 3
+// int c{3.14};           // ошибка компиляции
+// int d = {3.14};        // тоже ошибка
+unsigned char e{42};      // допустимо: константа представима
+int n = 42;
+// unsigned char f{n};    // ошибка: n не константное выражение,
+                         // а int не весь представим в unsigned char
+constexpr int k = 42;
+unsigned char g{k};       // допустимо
+</code></pre>
+<p>Сужение проверяется по правилам языка, а не только по текущему значению переменной. Поэтому <code>n</code> и <code>k</code> дают разный результат. Приведение <code>static_cast</code> может явно разрешить преобразование, но само по себе не проверяет диапазон.</p>
+<h3 id="164-почему-и-не-взаимозаменяемы">1.6.4. Почему () и {} не взаимозаменяемы</h3>
+<pre><code class="language-cpp">#include &lt;vector&gt;
+std::vector&lt;int&gt; a(3, 7); // три элемента: 7, 7, 7
+std::vector&lt;int&gt; b{3, 7}; // два элемента: 3, 7
+std::vector&lt;int&gt; c(3);    // три нуля
+std::vector&lt;int&gt; d{3};    // один элемент со значением 3
+</code></pre>
+<p>Для такого класса непустой список в <code>{}</code> сначала рассматривает конструкторы с <code>std::initializer_list</code>. Это причина различий. В <code>a(3, 7)</code> выбран конструктор «количество, значение», в <code>b{3, 7}</code> — список элементов. Скобки выбирают не стиль оформления, а семантику.</p>
+<p>Не смешивайте <strong>список инициализации членов конструктора</strong> (<code>: x_(x)</code>) и <strong>тип <code>std::initializer_list</code></strong>: это разные понятия.</p>
+<h3 id="165-класс-и-explicit-какой-конструктор-доступен">1.6.5. Класс и explicit: какой конструктор доступен</h3>
+<pre><code class="language-cpp">struct Count {
+    explicit Count(int) {}
+};
+void use(Count) {}
+
+int main() {
+    Count a(5);           // direct: допустимо
+    Count b{5};           // direct-list: допустимо
+    // Count c = 5;       // ошибка: неявное преобразование запрещено
+    // Count d = {5};     // ошибка: выбран explicit-конструктор
+    // use(5);            // ошибка
+    use(Count{5});        // явно создаём Count
+}
+</code></pre>
+<p><code>explicit</code> защищает от непреднамеренного превращения числа в объект. Подробнее конструкторы и специальные методы изучаются в лекции 6; здесь важно различать формы инициализации.</p>
+<h3 id="166-пустые-скобки-и-most-vexing-parse">1.6.6. Пустые скобки и most vexing parse</h3>
+<pre><code class="language-cpp">#include &lt;string&gt;
+std::string a;       // объект: пустая строка
+std::string b{};     // объект: пустая строка
+std::string c();     // объявление функции c, возвращающей string!
+</code></pre>
+<p><code>T x();</code> в таком объявлении не создаёт объект. Чтобы создать объект без аргументов и избежать этой неоднозначности, используйте <code>T x{};</code>.</p>
+<h3 id="167-массивы-и-агрегаты">1.6.7. Массивы и агрегаты</h3>
+<pre><code class="language-cpp">int a[4]{1, 2};    // 1, 2, 0, 0
+int b[4]{};        // четыре нуля
+
+struct Point {
+    int x;
+    int y = 9;
+};
+Point p{2, 3};     // x=2, y=3
+Point q{2};        // x=2, y=9: инициализатор поля
+Point r{};         // x=0, y=9
+Point t;           // x не задан, y=9; не читайте t.x
+Point u{.x = 4};   // C++20: x=4, y=9
+</code></pre>
+<p><code>Point</code> здесь агрегат: у него нет пользовательски объявленных конструкторов и других признаков, исключающих агрегатность. <code>struct</code> сам по себе не гарантирует, что тип является агрегатом. Для designated initializers C++20 имена полей должны следовать порядку их объявления; нельзя произвольно переставить <code>.y</code> перед <code>.x</code>.</p>
+<h3 id="168-auto-const-и-ссылки">1.6.8. auto, const и ссылки</h3>
+<pre><code class="language-cpp">#include &lt;initializer_list&gt;
+const int x = 10;
+auto a = x;            // int: верхний const убран
+auto&amp; b = x;           // const int&amp;: ссылка на x
+const auto&amp; c = x;     // const int&amp;
+auto d{1};             // int
+auto e = {1};          // std::initializer_list&lt;int&gt;
+// auto f{1, 2};       // ошибка вывода типа
+int n = 3;
+int&amp; ref = n;          // ref обозначает n
+// int&amp; bad = 3;       // неконстантная lvalue-ссылка не связывается с 3
+const int&amp; ok = 3;     // допустимо, время жизни временного продлено
+</code></pre>
+<p><code>auto</code> — вывод типа, а не динамическая типизация. <code>auto a = x</code> создаёт независимую копию значения; <code>auto&amp; b = x</code> связывает ссылку. Для данного <code>x</code>: <code>decltype(x)</code> — <code>const int</code>, <code>decltype((x))</code> — <code>const int&amp;</code>.</p>
+<h3 id="169-const-и-constexpr-не-равны">1.6.9. const и constexpr не равны</h3>
+<pre><code class="language-cpp">int read();
+const int a = read();      // неизменяемое значение, получаемое при выполнении
+constexpr int b = 5 * 5;   // инициализатор обязан быть константным выражением
+// constexpr int c = read(); // ошибка: read не constexpr
+</code></pre>
+<p><code>const</code> ограничивает изменение объекта. <code>constexpr</code> у такой переменной требует константного выражения в инициализаторе и также делает объект константным. Для функции <code>constexpr</code> означает возможность вычисления на этапе компиляции при подходящих аргументах и контексте, а не обязательное compile-time исполнение каждого вызова.</p>
+<h3 id="1610-осторожно-не-обнуляет-любой-класс">1.6.10. Осторожно: {} не обнуляет любой класс</h3>
+<pre><code class="language-cpp">struct A { int x; };             // агрегат
+struct B { int x; B() {} };      // пользовательский конструктор не задаёт x
+struct C { int x{}; C() {} };    // поле имеет свой инициализатор
+
+A a{}; // x=0
+B b{}; // x не задан! Тело B() не инициализирует int
+C c{}; // x=0
+</code></pre>
+<p>Запоминать «<code>{}</code> всегда всё обнуляет» неверно. Нужно определить, агрегат ли это, какой конструктор вызывается и как инициализируются его поля. Для полей скалярных типов полезно задавать default member initializer: <code>int x{};</code>.</p>
+<h3 id="1611-инициализация-полей-и-присваивание-в-теле">1.6.11. Инициализация полей и присваивание в теле</h3>
+<pre><code class="language-cpp">#include &lt;string&gt;
+#include &lt;utility&gt;
+class Person {
+    const int id_;
+    std::string name_;
+public:
+    Person(int id, std::string name)
+        : id_(id), name_(std::move(name)) {} // поля создаются сразу
+};
+</code></pre>
+<p>До входа в тело конструктора базы и поля уже инициализированы. <code>const</code>-поле и ссылочное поле нужно инициализировать, им нельзя «назначить начальное значение потом» обычным присваиванием. Порядок полей задаётся их объявлением в классе. Подробный порядок, включая базы, — в лекциях 6 и 8.</p>
+<h3 id="1612-проверь-себя-перед-переходом-дальше">1.6.12. Проверь себя перед переходом дальше</h3>
+<p>Сначала определите, создаётся ли объект или объявляется функция. Затем назовите вид инициализации, проверьте narrowing и <code>explicit</code>, выберите конструктор и разберите состояние полей.</p>
+<table>
+<thead>
+<tr>
+<th>Вопрос</th>
+<th>Ответ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>int x{};</code></td>
+<td>Ноль</td>
+</tr>
+<tr>
+<td>Локальный <code>int x;</code> и сразу <code>std::cout &lt;&lt; x;</code></td>
+<td>UB в C++20</td>
+</tr>
+<tr>
+<td><code>int x = 3.9;</code></td>
+<td>Значение 3</td>
+</tr>
+<tr>
+<td><code>int x{3.9};</code></td>
+<td>Ошибка компиляции</td>
+</tr>
+<tr>
+<td><code>std::vector&lt;int&gt; v{4, 2};</code></td>
+<td>Два элемента: 4 и 2</td>
+</tr>
+<tr>
+<td><code>std::vector&lt;int&gt; v(4, 2);</code></td>
+<td>Четыре элемента со значением 2</td>
+</tr>
+<tr>
+<td><code>T object();</code></td>
+<td>Объявление функции</td>
+</tr>
+<tr>
+<td><code>T b = a;</code></td>
+<td>Инициализация нового b, не присваивание</td>
+</tr>
+</tbody>
+</table>
+<p>Правила сверены с проектом стандарта C++20 N4861: <a href="https://timsong-cpp.github.io/cppwp/n4861/dcl.init">инициализация</a>, <a href="https://timsong-cpp.github.io/cppwp/n4861/dcl.init.list">list-initialization</a>, <a href="https://timsong-cpp.github.io/cppwp/n4861/class.base.init">инициализация баз и полей</a>.</p>
+</div></details><details class="topic"  id="17-namespace-и-конфликт-имён"><summary><span>1.7. namespace и конфликт имён</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">namespace A { int value = 1; }
+namespace B { int value = 2; }
+int x = A::value;  // 1
+</code></pre>
+<p><code>using namespace A; using namespace B; int x = value;</code> — неоднозначность. В заголовочных файлах особенно нежелательно <code>using namespace std;</code>: оно загрязняет пространство имён каждого включающего файла.</p>
+<p><strong>Проверка:</strong> почему <code>const int size = getSize(); int arr[size];</code> не является стандартным C++20, если <code>getSize()</code> — обычная функция? Потому что встроенному массиву с автоматическим хранением требуется размер, являющийся константным выражением; <code>const</code> здесь недостаточно. Используйте <code>std::vector&lt;int&gt; arr(size)</code>.</p>
+<hr />
+</div></details></section><section class="lesson" id="lecture-2" data-lecture="2"><h1 id="лекция-2-операторы-ввод-вывод-ветвления-и-циклы">Лекция 2. Операторы, ввод-вывод, ветвления и циклы</h1>
+<details class="topic"  id="21-арифметика-и-преобразования"><summary><span>2.1. Арифметика и преобразования</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">int a = 17, b = 5;
+// a+b = 22; a-b = 12; a*b = 85
+// a/b = 3;  a%b = 2
+// -17 / 5 = -3; -17 % 5 = -2
+// 17 / 5.0 = 3.4
+</code></pre>
+<p>При делении двух целых результат целый, <strong>усечение идёт к нулю</strong>. <code>%</code> работает с целочисленными типами. Деление целого на ноль — UB. Переполнение знакового целого — UB; беззнаковое переполняется по модулю <code>2^N</code>. Перед вычислением применяются <strong>integer promotions</strong> и <strong>usual arithmetic conversions</strong>. Например, <code>int + double</code> даёт <code>double</code>; при сравнении отрицательного <code>int</code> с <code>unsigned</code> можно неожиданно получить огромное положительное беззнаковое значение.</p>
+<pre><code class="language-cpp">int a = -1;
+unsigned b = 1;
+// a &lt; b обычно false: a преобразуется в unsigned
+</code></pre>
+<p><strong>Важно:</strong> не пытайтесь «предсказать число» при UB. Корректный ответ на контрольной: <em>поведение не определено</em>, а не «скорее всего напечатает ...».</p>
+</div></details><details class="topic"  id="22-побитовые-операции"><summary><span>2.2. Побитовые операции</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<p>Для <code>a = 0b1100</code> (12) и <code>b = 0b1010</code> (10):</p>
+<table>
+<thead>
+<tr>
+<th>Выражение</th>
+<th>Двоичный результат</th>
+<th>Десятичный результат</th>
+<th>Смысл</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>a &amp; b</code></td>
+<td><code>1000</code></td>
+<td>8</td>
+<td>Оба бита равны 1</td>
+</tr>
+<tr>
+<td><code>a &amp;#124; b</code></td>
+<td><code>1110</code></td>
+<td>14</td>
+<td>Хотя бы один бит равен 1</td>
+</tr>
+<tr>
+<td><code>a ^ b</code></td>
+<td><code>0110</code></td>
+<td>6</td>
+<td>Биты различаются</td>
+</tr>
+<tr>
+<td><code>a &lt;&lt; 1</code></td>
+<td><code>11000</code></td>
+<td>24</td>
+<td>Сдвиг влево</td>
+</tr>
+<tr>
+<td><code>a &gt;&gt; 1</code></td>
+<td><code>0110</code></td>
+<td>6</td>
+<td>Сдвиг вправо</td>
+</tr>
+</tbody>
+</table>
+<p><code>~a</code> инвертирует <strong>все биты типа после promotions</strong>, а не только четыре показанных бита. Для битовых масок обычно выбирают <code>unsigned</code>:</p>
+<pre><code class="language-cpp">constexpr unsigned READ = 1u &lt;&lt; 0;
+constexpr unsigned WRITE = 1u &lt;&lt; 1;
+unsigned flags = READ | WRITE;
+bool canRead = (flags &amp; READ) != 0;
+flags &amp;= ~WRITE;  // снять флаг
+flags |= WRITE;   // поставить флаг
+flags ^= READ;    // переключить флаг
+</code></pre>
+<p>Сдвиг на отрицательное число бит или на число, не меньше ширины продвинутого левого операнда, — UB. Для отрицательных signed-значений и переполнения особенно осторожно применяйте сдвиги; C++20 уточнил некоторые правила сдвигов относительно старых стандартов. Для ясной побитовой арифметики используйте unsigned.</p>
+</div></details><details class="topic"  id="23-логические-операции-и-short-circuit"><summary><span>2.3. Логические операции и short-circuit</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<p><code>&amp;&amp;</code> — логическое И, <code>||</code> — логическое ИЛИ, <code>!</code> — отрицание. Результат — <code>bool</code>. <strong>Короткое вычисление:</strong> в <code>A &amp;&amp; B</code> правая часть не выполняется, если <code>A</code> ложно; в <code>A || B</code> — если <code>A</code> истинно.</p>
+<pre><code class="language-cpp">int* p = nullptr;
+if (p != nullptr &amp;&amp; *p &gt; 0) { /* безопасная проверка */ }
+</code></pre>
+<p><code>&amp;</code> и <code>|</code> <strong>не</strong> являются заменой <code>&amp;&amp;</code> и <code>||</code>: они побитовые и не обеспечивают short-circuit. При сравнении <code>double</code> обычно учитывают абсолютную/относительную погрешность:</p>
+<pre><code class="language-cpp">#include &lt;cmath&gt;
+bool near(double a, double b) {
+    return std::abs(a-b) &lt;= 1e-9 * std::max({1.0, std::abs(a), std::abs(b)});
+}
+</code></pre>
+<p>Для этого примера требуется также <code>#include &lt;algorithm&gt;</code>. Порог подбирают под задачу; <code>numeric_limits&lt;double&gt;::epsilon()</code> сам по себе не является универсальным допуском.</p>
+</div></details><details class="topic"  id="24-приоритет-ассоциативность-"><summary><span>2.4. Приоритет, ассоциативность, ++/--</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">int a = 5;
+int b = ++a;  // a=6, b=6: сначала изменить
+int c = a++;  // c=6, a=7: сначала вернуть старое значение
+</code></pre>
+<p>Приоритет определяет <strong>группировку</strong>, но не всегда <strong>порядок вычисления</strong>. <code>*p++</code> означает <code>*(p++)</code>, а не <code>(*p)++</code>. <code>a = b = 3</code> группируется как <code>a = (b = 3)</code>. Не пишите выражения с несколькими конфликтующими изменениями одного объекта: <code>i++ + ++i</code> имеет UB из-за неупорядоченных побочных эффектов. В C++20 правила порядка вычислений уточнены, но это выражение по-прежнему некорректно.</p>
+</div></details><details class="topic"  id="25-составные-операторы-и-numeric_limits"><summary><span>2.5. Составные операторы и numeric_limits</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<p><code>x += y</code> семантически близок к <code>x = x + y</code>, но левый операнд вычисляется один раз. Аналогично <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>%=</code>, <code>&amp;=</code>, <code>|=</code>, <code>^=</code>, <code>&lt;&lt;=</code>, <code>&gt;&gt;=</code>.</p>
+<pre><code class="language-cpp">#include &lt;limits&gt;
+int maxInt = std::numeric_limits&lt;int&gt;::max();
+double eps = std::numeric_limits&lt;double&gt;::epsilon();
+double low = std::numeric_limits&lt;double&gt;::lowest();
+double minPosNormal = std::numeric_limits&lt;double&gt;::min();
+</code></pre>
+<p>Для <code>double</code> <code>min()</code> — <strong>наименьшее положительное нормализованное</strong> число, не самое отрицательное. <code>lowest()</code> — наименьшее конечное. <code>NaN != NaN</code> истинно, проверяйте <code>std::isnan(x)</code>.</p>
+</div></details><details class="topic"  id="26-математические-функции-cmath"><summary><span>2.6. Математические функции <code>&lt;cmath&gt;</code></span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<p><code>std::abs</code>, <code>std::sqrt</code>, <code>std::pow</code>, <code>std::ceil</code>, <code>std::floor</code>, <code>std::round</code>, <code>std::sin</code>, <code>std::cos</code>, <code>std::log</code>, <code>std::log10</code>, <code>std::log2</code>. Тригонометрия принимает <strong>радианы</strong>. В C++20 число π доступно как <code>std::numbers::pi</code> из <code>&lt;numbers&gt;</code>:</p>
+<pre><code class="language-cpp">#include &lt;cmath&gt;
+#include &lt;numbers&gt;
+double x = std::sin(std::numbers::pi / 2.0); // около 1
+</code></pre>
+<p><code>M_PI</code> и <code>M_E</code> — распространённые, но <strong>не стандартные</strong> макросы C++20. <code>std::pow(x, 2)</code> часто проще заменить на <code>x*x</code>, когда нужна именно вторая степень.</p>
+</div></details><details class="topic"  id="27-ввод-и-вывод"><summary><span>2.7. Ввод и вывод</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+#include &lt;string&gt;
+#include &lt;limits&gt;
+
+int age{};
+if (!(std::cin &gt;&gt; age)) {
+    std::cin.clear(); // сбросить флаг ошибки
+    std::cin.ignore(std::numeric_limits&lt;std::streamsize&gt;::max(), '\n');
+}
+std::string name;
+std::getline(std::cin &gt;&gt; std::ws, name); // пропустить ведущие пробельные символы
+std::cout &lt;&lt; std::fixed &lt;&lt; std::setprecision(2) &lt;&lt; 3.14159 &lt;&lt; '\n';
+</code></pre>
+<p><code>operator&gt;&gt;</code> для строки читает до пробельного символа; <code>getline</code> — до разделителя (обычно <code>\n</code>). После <code>cin &gt;&gt; age</code> в буфере остаётся перевод строки; используйте <code>ignore(..., '\n')</code>, если хотите прочитать <strong>всю следующую строку, включая возможные начальные пробелы</strong>. <code>std::ws</code> удаляет все ведущие пробельные символы, что иногда нежелательно. <code>std::setw(n)</code> действует на следующее поле, <code>std::fixed</code>, <code>std::hex</code>, <code>std::boolalpha</code> сохраняют состояние потока до изменения. <code>std::endl</code> печатает перевод строки <strong>и принудительно сбрасывает буфер</strong>; обычно достаточно <code>'\n'</code>.</p>
+</div></details><details class="topic"  id="28-if-switch-и-область-видимости"><summary><span>2.8. if, switch и область видимости</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">if (int score = 85; score &gt;= 90) {
+    std::cout &lt;&lt; &quot;A&quot;;
+} else if (score &gt;= 75) {
+    std::cout &lt;&lt; &quot;B&quot;;
+} else {
+    std::cout &lt;&lt; &quot;C&quot;;
+}
+// score здесь уже недоступен
+</code></pre>
+<p>В <code>switch</code> выполняется переход к подходящему <code>case</code>, затем выполнение продолжается до <code>break</code>, <code>return</code> или конца <code>switch</code>. <code>[[fallthrough]];</code> документирует намеренный переход к следующему <code>case</code>.</p>
+<pre><code class="language-cpp">switch (x) {
+    case 1: std::cout &lt;&lt; &quot;one&quot;; break;
+    case 2: std::cout &lt;&lt; &quot;two&quot;; [[fallthrough]];
+    case 3: std::cout &lt;&lt; &quot;three&quot;; break;
+    default: std::cout &lt;&lt; &quot;other&quot;;
+}
+</code></pre>
+<p><code>switch</code> требует целочисленного или перечислимого управляющего типа (с учётом допустимых преобразований), не <code>std::string</code>.</p>
+</div></details><details class="topic"  id="29-циклы-и-управление-потоком"><summary><span>2.9. Циклы и управление потоком</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">for (int i = 0; i &lt; 3; ++i) { std::cout &lt;&lt; i; } // 012
+int n = 0;
+while (n &lt; 3) ++n;     // проверка до тела
+do { --n; } while (n &gt; 0); // тело хотя бы один раз
+</code></pre>
+<p><code>break</code> выходит из <strong>ближайшего</strong> цикла или <code>switch</code>, <code>continue</code> переходит к следующей итерации <strong>ближайшего цикла</strong>. В <code>for</code> после <code>continue</code> выполняется выражение обновления. Range-based <code>for</code>:</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; v{1, 2, 3};
+for (int x : v) x *= 2;   // изменяется копия
+for (int&amp; x : v) x *= 2;  // изменяются элементы: 2,4,6
+</code></pre>
+</div></details><details class="topic"  id="210-преобразования-типов"><summary><span>2.10. Преобразования типов</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<p><strong>Неявные:</strong> promotion (<code>char</code> → <code>int</code>), usual arithmetic conversions, преобразование к <code>bool</code>. <strong>Явные:</strong> <code>static_cast&lt;int&gt;(3.9)</code> → <code>3</code> (усечение к нулю). C-style cast <code>(T)x</code> менее прозрачен, чем именованные C++-приведения. <code>static_cast</code> не выполняет произвольную проверку диапазона: преобразование вещественного числа в целое вне представимого диапазона — UB.</p>
+<p><strong>Контрольный вопрос:</strong> что выведет <code>std::cout &lt;&lt; (5 / 2 * 2.0);</code>? <strong>Ответ: <code>4</code></strong>, потому что <code>5/2</code> вычисляется как целое <code>2</code>, затем <code>2*2.0</code> → <code>4.0</code>.</p>
+<hr />
+</div></details><details class="topic"  id="211-разбор-значение-выражения-и-побочный-эффект"><summary><span>2.11. Разбор: значение выражения и побочный эффект</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<p>В строке <code>int old = x++;</code> есть два результата: в <code>old</code> попадает старое значение, а <code>x</code> увеличивается. Не определяйте порядок вычисления только по приоритету операторов: приоритет задаёт группировку выражения.</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+int main() {
+    int x = 3;
+    int old = x++;
+    int now = ++x;
+    std::cout &lt;&lt; old &lt;&lt; ' ' &lt;&lt; now &lt;&lt; ' ' &lt;&lt; x; // 3 5 5
+}
+</code></pre>
+<p>У встроенных <code>&amp;&amp;</code> и <code>||</code> правый операнд вычисляется только при необходимости: <code>p != nullptr &amp;&amp; *p &gt; 0</code> не разыменует нулевой указатель. У перегруженных операторов <code>&amp;&amp;</code> и <code>||</code> такой короткой схемы нет. Для контрольной безопаснее разбивать изменения одного объекта на отдельные строки и затем считать результат.</p>
+<hr />
+</div></details></section><section class="lesson" id="lecture-3" data-lecture="3"><h1 id="лекция-3-память-указатели-ссылки-и-категории-значений">Лекция 3. Память, указатели, ссылки и категории значений</h1>
+<details class="topic"  id="31-модель-памяти-процесса"><summary><span>3.1. Модель памяти процесса</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<table>
+<thead>
+<tr>
+<th>Область типичной реализации</th>
+<th>Назначение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stack</td>
+<td>Кадры вызовов и автоматические объекты</td>
+</tr>
+<tr>
+<td>Heap</td>
+<td>Динамически выделяемая память</td>
+</tr>
+<tr>
+<td>Data/BSS</td>
+<td>Хранение глобальных и статических объектов</td>
+</tr>
+<tr>
+<td>Text</td>
+<td>Машинный код программы</td>
+</tr>
+</tbody>
+</table>
+<p>Это условная модель реализации, а не требуемая стандартом C++ раскладка памяти. Порядок областей и направления их роста зависят от платформы.</p>
+<p>Это <strong>иллюстрация типичной ОС</strong>, не гарантия стандарта C++: стандарт задаёт длительности хранения, а не обязательные физические сегменты или направления роста. <code>int local;</code> обычно размещается в стеке; <code>static int x;</code> имеет статическую длительность хранения; <code>new int</code> создаёт объект с динамической длительностью хранения. Сам <strong>указатель</strong> на выделенный объект может лежать в стеке, а объект — в динамической памяти.</p>
+<pre><code class="language-cpp">int global = 10;
+void f() {
+    int local = 20;
+    int* p = new int(40);
+    delete p;
+}
+</code></pre>
+</div></details><details class="topic"  id="32-адрес-и-разыменование"><summary><span>3.2. Адрес и разыменование</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">int x = 42;
+int* p = &amp;x; // p хранит адрес x
+*p = 100;   // меняем объект x
+// x == 100
+</code></pre>
+<p>Если <code>p = &amp;x</code>, указатель <code>p</code> хранит адрес объекта <code>x</code>, а выражение <code>*p</code> обозначает сам <code>x</code>. Например, при <code>x == 100</code> чтение <code>*p</code> даёт 100.</p>
+<p><code>&amp;x</code> — адрес объекта; <code>*p</code> — доступ к объекту, на который указывает <code>p</code>. <code>*</code> в объявлении (<code>int* p</code>) и в выражении (<code>*p</code>) выполняет разные роли. <code>nullptr</code> — типобезопасный нулевой указатель. <strong>Разыменование <code>nullptr</code> — UB.</strong></p>
+</div></details><details class="topic"  id="33-арифметика-указателей-и-массивы"><summary><span>3.3. Арифметика указателей и массивы</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">int a[]{10, 20, 30, 40};
+int* p = a;         // указывает на a[0]
+int x = *(p + 2);   // 30
+int y = p[3];       // 40
+</code></pre>
+<p>Для массива <code>int a[4]{10, 20, 30, 40}</code> при условных адресе начала 1000 и <code>sizeof(int) == 4</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Элемент</th>
+<th>Указатель</th>
+<th>Условный адрес</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>a[0]</code></td>
+<td><code>p</code></td>
+<td>1000</td>
+<td>10</td>
+</tr>
+<tr>
+<td><code>a[1]</code></td>
+<td><code>p + 1</code></td>
+<td>1004</td>
+<td>20</td>
+</tr>
+<tr>
+<td><code>a[2]</code></td>
+<td><code>p + 2</code></td>
+<td>1008</td>
+<td>30</td>
+</tr>
+<tr>
+<td><code>a[3]</code></td>
+<td><code>p + 3</code></td>
+<td>1012</td>
+<td>40</td>
+</tr>
+</tbody>
+</table>
+<p>Здесь <code>p = a</code>; адреса приведены только для иллюстрации.</p>
+<p><code>p + n</code> сдвигается на <strong>n элементов</strong>, не на n байт. Допустимы адреса элементов <strong>одного массива</strong> и адрес «на один за концом» (<code>a + 4</code>), но разыменовывать последний нельзя. <code>a[2] == *(a+2) == 2[a]</code> (последнее синтаксически допустимо, но не рекомендуется). Разность указателей внутри массива имеет тип <code>std::ptrdiff_t</code>.</p>
+<p><strong>Тонкость:</strong> массив <strong>не является указателем</strong>. Во многих выражениях <code>a</code> преобразуется в указатель на первый элемент (array-to-pointer decay), но <code>sizeof(a)</code> измеряет весь массив, <code>&amp;a</code> имеет тип <code>int (*)[4]</code>, а <code>a</code> не переназначается. В параметре <code>void f(int a[])</code> тип фактически корректируется до <code>int*</code> и размер массива теряется. В C++20 удобны <code>std::span&lt;int&gt;</code> и <code>std::array&lt;int, N&gt;</code>.</p>
+</div></details><details class="topic"  id="34-четыре-сочетания-const"><summary><span>3.4. Четыре сочетания const</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">int x = 1, y = 2;
+int* p1 = &amp;x;              // меняем адрес и *p1
+const int* p2 = &amp;x;        // p2 можно перенаправить; *p2 менять нельзя
+int* const p3 = &amp;x;        // p3 нельзя перенаправить; *p3 менять можно
+const int* const p4 = &amp;x;  // нельзя ни перенаправить, ни менять через p4
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Объявление</th>
+<th>Изменить <code>*p</code> через этот указатель?</th>
+<th>Присвоить <code>p = &amp;y</code>?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>int* p</code></td>
+<td>да</td>
+<td>да</td>
+</tr>
+<tr>
+<td><code>const int* p</code></td>
+<td>нет</td>
+<td>да</td>
+</tr>
+<tr>
+<td><code>int* const p</code></td>
+<td>да</td>
+<td>нет</td>
+</tr>
+<tr>
+<td><code>const int* const p</code></td>
+<td>нет</td>
+<td>нет</td>
+</tr>
+</tbody>
+</table>
+<p><code>const int* p</code> не делает исходный объект обязательно константным: если <code>x</code> не <code>const</code>, его можно изменить другим способом. <code>nullptr</code> имеет тип <code>std::nullptr_t</code>; предпочитайте его <code>NULL</code> и <code>0</code> при работе с указателями и перегрузками. <code>const</code>-указатель (<code>int* const</code>) обязательно инициализируется.</p>
+</div></details><details class="topic"  id="35-newdelete-и-владение-памятью"><summary><span>3.5. new/delete и владение памятью</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">int* p = new int(42);
+delete p;                   // один объект
+p = nullptr;               // лишь этот указатель обнулён
+
+int* a = new int[5]{};     // массив из пяти нулей
+delete[] a;                 // строго delete[]
+</code></pre>
+<p><code>new int</code> без инициализатора оставляет значение неинициализированным; <code>new int{}</code> инициализирует нулём. <code>new</code> по умолчанию при неудаче бросает <code>std::bad_alloc</code>. <code>delete nullptr;</code> безопасен. <code>new[]</code> <strong>нельзя</strong> парно освобождать обычным <code>delete</code> и наоборот: это UB. Современная альтернатива:</p>
+<pre><code class="language-cpp">std::vector&lt;int&gt; v(5);                // массив переменной длины
+std::unique_ptr&lt;int&gt; p = std::make_unique&lt;int&gt;(42);
+</code></pre>
+<p><code>delete p; p = nullptr;</code> защищает только от повторного удаления <strong>через p</strong>; копии адреса в других указателях остаются висячими.</p>
+</div></details><details class="topic"  id="36-ошибки-памяти"><summary><span>3.6. Ошибки памяти</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<table>
+<thead>
+<tr>
+<th>Ошибка</th>
+<th>Пример</th>
+<th>Почему опасно</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Leak</strong></td>
+<td><code>new int(5);</code> без сохранения/освобождения</td>
+<td>потерян ресурс</td>
+</tr>
+<tr>
+<td><strong>Dangling</strong></td>
+<td><code>int* p = &amp;local;</code> после выхода из функции</td>
+<td>время жизни объекта закончилось</td>
+</tr>
+<tr>
+<td><strong>Use-after-free</strong></td>
+<td><code>delete p; std::cout &lt;&lt; *p;</code></td>
+<td>обращение к уничтоженному объекту</td>
+</tr>
+<tr>
+<td><strong>Double delete</strong></td>
+<td><code>delete p; delete q;</code> при <code>q == p</code></td>
+<td>повторное освобождение</td>
+</tr>
+<tr>
+<td><strong>Out-of-bounds</strong></td>
+<td><code>a[5]</code> для <code>int a[5]</code></td>
+<td>выход за границу</td>
+</tr>
+<tr>
+<td><strong>Mismatched delete</strong></td>
+<td><code>delete</code> после <code>new[]</code></td>
+<td>неверная пара операций</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-cpp">int* bad() {
+    int x = 10;
+    return &amp;x; // адрес перестанет быть действительным после выхода
+}
+</code></pre>
+<p>Такой код часто выдаёт предупреждение компилятора. Правильнее вернуть значение <code>int</code>, либо объект с корректно организованным временем жизни. <strong>RAII</strong> устраняет необходимость ручного освобождения в большинстве пользовательских классов.</p>
+</div></details><details class="topic"  id="37-санитайзеры"><summary><span>3.7. Санитайзеры</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-bash">g++ -std=c++20 -g -O1 -fno-omit-frame-pointer \
+    -fsanitize=address,undefined main.cpp -o app
+./app
+</code></pre>
+<p><strong>ASan</strong> обнаруживает многие выходы за границы, use-after-free, double-free; обнаружение утечек зависит от доступности/настройки LeakSanitizer. <strong>UBSan</strong> диагностирует ряд нарушений правил языка (например, некоторые переполнения и недопустимые преобразования). Ни один санитайзер <strong>не доказывает отсутствие всех ошибок</strong>. Для разработки полезны также <code>-Wall -Wextra -Wpedantic</code>.</p>
+</div></details><details class="topic"  id="38-ссылки-и-алиасы"><summary><span>3.8. Ссылки и алиасы</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">int x = 10;
+int&amp; r = x;          // r — другое имя x
+r = 20;             // x == 20
+const int&amp; cr = 42; // временный int живёт столько, сколько cr
+// int&amp; wrong = 42; // ошибка компиляции
+</code></pre>
+<p>Обычная ссылка должна быть инициализирована и не может быть переназначена: <code>r = y</code> <strong>присваивает значение</strong> объекту <code>x</code>, а не привязывает ссылку к <code>y</code>. В корректной программе ссылка должна обозначать действующий объект; при этом <strong>висячие ссылки возможны</strong>, если объект уже уничтожен. <code>const T&amp;</code> может связываться с временным объектом, иногда продлевая его время жизни; правила продления зависят от контекста, и <strong>не всякая передача временного через ссылку продлевает жизнь</strong>.</p>
+<p><strong>Передача параметров:</strong> <code>f(T)</code> — копия/перемещение, <code>f(T&amp;)</code> — изменение исходного объекта, <code>f(const T&amp;)</code> — чтение без копии и связывание с временными, <code>f(T*)</code> — допускается <code>nullptr</code> и явная семантика адреса.</p>
+</div></details><details class="topic"  id="39-категории-значений-lvalue-prvalue-xvalue"><summary><span>3.9. Категории значений: lvalue, prvalue, xvalue</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<table>
+<thead>
+<tr>
+<th>Категория</th>
+<th>Входит в группы</th>
+<th>Примеры</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>lvalue</td>
+<td>glvalue</td>
+<td><code>x</code>, <code>*p</code></td>
+</tr>
+<tr>
+<td>xvalue</td>
+<td>glvalue и rvalue</td>
+<td><code>std::move(x)</code></td>
+</tr>
+<tr>
+<td>prvalue</td>
+<td>rvalue</td>
+<td><code>42</code>, <code>x + 1</code></td>
+</tr>
+</tbody>
+</table>
+<p>Это <strong>категории выражений</strong>, а не типы переменных. <code>lvalue</code>: <code>x</code>, <code>*p</code>, <code>a[0]</code>, <code>++x</code> для встроенного <code>int</code>. <code>prvalue</code>: <code>42</code>, <code>x+1</code>, <code>std::string{}</code>, <code>&amp;x</code>. <code>xvalue</code>: <code>std::move(x)</code>, <code>static_cast&lt;T&amp;&amp;&gt;(x)</code>. <code>std::move</code> <strong>ничего не перемещает само по себе</strong> — это приведение к rvalue-ссылке; реальное перемещение делает соответствующий конструктор/оператор. Именованная переменная типа <code>T&amp;&amp;</code> при использовании по имени является <strong>lvalue</strong>.</p>
+<pre><code class="language-cpp">std::string s = &quot;hello&quot;;
+std::string t = std::move(s); // может вызвать move-конструктор
+// s остаётся корректным, но его содержимое после move не определено заранее
+</code></pre>
+</div></details><details class="topic"  id="310-именованные-приведения"><summary><span>3.10. Именованные приведения</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<ul>
+<li><code>static_cast&lt;T&gt;(x)</code> — проверяемые на этапе компиляции допустимые преобразования, но <strong>не гарантия отсутствия потери данных</strong>.</li>
+<li><code>const_cast&lt;T&gt;(x)</code> — изменение cv-квалификации; попытка изменить <strong>изначально const</strong> объект через снятый <code>const</code> — UB.</li>
+<li><code>dynamic_cast&lt;T&gt;(x)</code> — проверяемое во время выполнения приведение в полиморфной иерархии (для указателя неудача → <code>nullptr</code>, для ссылки — <code>std::bad_cast</code>).</li>
+<li><code>reinterpret_cast&lt;T&gt;(x)</code> — низкоуровневая интерпретация представления; не делает доступ к произвольному объекту безопасным.</li>
+</ul>
+<p><strong>Задание:</strong> <code>int a[3]{1,2,3}; int* p=a+3;</code> — создание <code>p</code> допустимо; <code>*p</code> — UB. <code>p-a</code> равно <code>3</code>.</p>
+<hr />
+</div></details><details class="topic"  id="311-разбор-объект-ссылка-указатель-и-время-жизни"><summary><span>3.11. Разбор: объект, ссылка, указатель и время жизни</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<p>Ссылка не владеет объектом и не продлевает жизнь произвольного объекта автоматически. Её корректность зависит от того, существует ли объект, к которому она привязана.</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+int main() {
+    int x = 7;
+    int copy = x;
+    int&amp; alias = x;
+    int* ptr = &amp;x;
+    alias = 9;
+    std::cout &lt;&lt; x &lt;&lt; ' ' &lt;&lt; copy &lt;&lt; ' ' &lt;&lt; *ptr; // 9 7 9
+}
+</code></pre>
+<p><code>copy</code> — отдельный объект, <code>alias</code> — другое имя <code>x</code>, <code>ptr</code> — отдельный объект-указатель, который хранит адрес <code>x</code>. <code>delete ptr</code> здесь недопустим: <code>x</code> не создан через <code>new</code>. При разборе всегда отдельно отвечайте: кто владеет ресурсом, кто лишь обращается к нему и когда заканчивается его время жизни.</p>
+<hr />
+</div></details></section><section class="lesson" id="lecture-4" data-lecture="4"><h1 id="лекция-4-функции-и-разрешение-перегрузки">Лекция 4. Функции и разрешение перегрузки</h1>
+<details class="topic"  id="41-объявление-определение-сигнатура"><summary><span>4.1. Объявление, определение, сигнатура</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">int sum(int a, int b);                 // объявление
+int sum(int a, int b) { return a+b; } // определение
+</code></pre>
+<p>Имя и типы параметров участвуют в перегрузке. <strong>Нельзя перегружать только по возвращаемому типу</strong>:</p>
+<pre><code class="language-cpp">int f(int);
+// double f(int); // конфликт
+</code></pre>
+<p>При объявлении функции можно не указывать имена параметров, но в определении они нужны, если используются в теле.</p>
+</div></details><details class="topic"  id="42-способы-передачи-аргументов"><summary><span>4.2. Способы передачи аргументов</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">void byValue(int x) { ++x; }   // копия
+void byRef(int&amp; x) { ++x; }    // изменяет исходный объект
+void byConstRef(const std::string&amp; s) { std::cout &lt;&lt; s; }
+void byPointer(int* p) { if (p) ++*p; }
+</code></pre>
+<p>Выбирайте по значению для маленьких скаляров, <code>const T&amp;</code> для больших объектов без необходимости копирования, <code>T&amp;</code> для обязательного изменяемого объекта, <code>T*</code> если допустимо отсутствие объекта. Для передачи владения подходят <code>std::unique_ptr</code> и другие явные интерфейсы владения. Нельзя возвращать ссылку/указатель на локальный объект с автоматическим хранением.</p>
+</div></details><details class="topic"  id="43-перегрузка-функций"><summary><span>4.3. Перегрузка функций</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">void print(int);
+void print(double);
+void print(const std::string&amp;);
+print(3);     // int
+print(3.14);  // double
+</code></pre>
+<p>Компилятор: (1) находит кандидатов; (2) отбирает жизнеспособные; (3) сравнивает последовательности преобразований; (4) выбирает лучшую или сообщает неоднозначность. Упрощённая иерархия: <strong>точное совпадение &gt; promotion &gt; conversion &gt; пользовательское преобразование</strong>. Но полный алгоритм сложнее, учитывает ссылки, шаблоны, квалификаторы и другие правила.</p>
+<pre><code class="language-cpp">void f(long);
+void f(double);
+// f(1); // неоднозначно: int -&gt; long и int -&gt; double — conversions
+</code></pre>
+<p><strong>Тонкость:</strong> <code>const</code> для параметра <strong>по значению</strong> не образует новую перегрузку: <code>void f(int)</code> и <code>void f(const int)</code> — одна сигнатура функции. Для ссылок <code>void f(int&amp;)</code> и <code>void f(const int&amp;)</code> — разные перегрузки.</p>
+</div></details><details class="topic"  id="44-разрешение-перегрузки-const-ссылки-временные"><summary><span>4.4. Разрешение перегрузки: const, ссылки, временные</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">void show(int&amp;);       // изменяемое lvalue
+void show(const int&amp;); // const lvalue и rvalue
+void show(int&amp;&amp;);      // rvalue
+
+int x = 1;
+show(x);            // int&amp;
+show(std::move(x)); // int&amp;&amp;
+show(42);           // int&amp;&amp;
+const int y = 2;
+show(y);            // const int&amp;
+</code></pre>
+<p>Для объекта класса перегрузки <code>f() &amp;</code>, <code>f() const&amp;</code>, <code>f() &amp;&amp;</code> могут различать категорию и константность объекта. <strong>Результат разрешения определяется типами и категориями выражений</strong>, а не только текстом аргумента.</p>
+</div></details><details class="topic"  id="45-аргументы-по-умолчанию"><summary><span>4.5. Аргументы по умолчанию</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">void log(std::string msg, int level = 1);
+log(&quot;start&quot;); // эквивалентно log(&quot;start&quot;, 1)
+</code></pre>
+<p>Аргументы по умолчанию задаются обычно в объявлении, а не повторяются в определении. После первого параметра с умолчанием следующие параметры в той же области объявления должны иметь умолчания (с учётом ранее видимых объявлений). Умолчания <strong>не входят в тип функции</strong> и могут приводить к неоднозначности:</p>
+<pre><code class="language-cpp">void f(int);
+void f(int, int = 0);
+// f(1); // неоднозначно
+</code></pre>
+</div></details><details class="topic"  id="46-inline-constexpr-consteval"><summary><span>4.6. inline, constexpr, consteval</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<p><code>inline</code> позволяет иметь идентичное определение функции в нескольких единицах трансляции (например, в заголовке), но <strong>не гарантирует</strong> встраивания машинного кода. <code>constexpr</code> разрешает вычисление при компиляции, когда выполнены условия constant evaluation; функцию можно вызвать и во время выполнения. <code>consteval</code> (C++20) требует, чтобы вызов был пригоден для вычисления в константном выражении.</p>
+<pre><code class="language-cpp">constexpr int sq(int x) { return x*x; }
+constexpr int a = sq(4); // compile-time: 16
+int n; std::cin &gt;&gt; n;
+int b = sq(n);           // runtime допустим
+consteval int cube(int x) { return x*x*x; }
+constexpr int c = cube(3);
+// int d = cube(n); // ошибка
+</code></pre>
+</div></details><details class="topic"  id="47-rvo-nrvo-возврат-по-значению"><summary><span>4.7. RVO, NRVO, возврат по значению</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">std::string make() {
+    return std::string(&quot;hello&quot;); // гарантированное устранение копии в C++17+
+}
+std::string make2() {
+    std::string s = &quot;hello&quot;;
+    return s; // NRVO разрешён, но не гарантирован
+}
+</code></pre>
+<p><strong>RVO / guaranteed copy elision:</strong> для подходящих prvalue возвращаемый объект конструируется сразу в месте назначения; наличие копирующего/move-конструктора может быть не нужно, хотя деструктор должен быть доступен и не удалён. <strong>NRVO:</strong> возврат именованной локальной переменной, оптимизация обычно применяется, но не гарантируется. Если NRVO не выполнен, язык предусматривает правила попытки перемещения из подходящей локальной переменной.</p>
+<p><strong>Ошибка:</strong> <code>return std::move(s);</code> в <code>make2()</code> часто <strong>мешает NRVO</strong>. Не добавляйте <code>std::move</code> к каждому <code>return</code> автоматически.</p>
+</div></details><details class="topic"  id="48-указатели-на-функции-stdfunction-лямбды"><summary><span>4.8. Указатели на функции, std::function, лямбды</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">int add(int a, int b) { return a+b; }
+int (*pf)(int,int) = &amp;add;
+int x = pf(2,3); // 5
+
+std::function&lt;int(int,int)&gt; op = add;
+auto twice = [](int x) { return 2*x; };
+</code></pre>
+<p>Указатель на функцию хранит адрес обычной функции с подходящей сигнатурой. <code>std::function</code> (заголовок <code>&lt;functional&gt;</code>) — типостёртая оболочка для вызываемых объектов, часто с дополнительными затратами. Лямбда <code>[&amp;]</code> захватывает используемые переменные по ссылке, <code>[=]</code> — по значению, <code>[x]</code> — конкретную переменную по значению. <strong>Захват по ссылке опасен</strong>, если лямбда живёт дольше захваченной локальной переменной.</p>
+</div></details><details class="topic"  id="49-рекурсия"><summary><span>4.9. Рекурсия</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">int factorial(int n) {
+    if (n &lt; 0) throw std::invalid_argument(&quot;negative&quot;);
+    if (n &lt;= 1) return 1;         // базовый случай
+    return n * factorial(n-1);   // рекурсивный шаг
+}
+</code></pre>
+<p>У рекурсии должны быть базовый случай и движение к нему. Каждый вызов обычно добавляет кадр стека; слишком глубокая рекурсия может исчерпать стек. <code>factorial</code> на <code>int</code> быстро переполняется, даже если сама рекурсия логически правильна. Для больших <code>n</code> используйте другой тип/алгоритм и проверяйте диапазон.</p>
+</div></details><details class="topic"  id="410-adl-argument-dependent-lookup"><summary><span>4.10. ADL — Argument-Dependent Lookup</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">namespace Geometry {
+    struct Point { int x; };
+    void draw(const Point&amp;) { std::cout &lt;&lt; &quot;point\n&quot;; }
+}
+int main() {
+    Geometry::Point p{1};
+    draw(p); // ADL найдёт Geometry::draw
+}
+</code></pre>
+<p>Кроме обычного поиска имён, компилятор ищет подходящие свободные функции в пространствах имён, <strong>ассоциированных с типами аргументов</strong>. Поэтому <code>operator&lt;&lt;</code>, <code>swap</code> и свободные операторы часто определяют в пространстве имён своего типа. ADL не является универсальным поиском всех функций по всему проекту.</p>
+<hr />
+</div></details><details class="topic"  id="411-разбор-как-выбирать-способ-передачи-параметра"><summary><span>4.11. Разбор: как выбирать способ передачи параметра</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<p>Передача по значению создаёт отдельный параметр. Передача по ссылке позволяет обратиться к исходному объекту; <code>const T&amp;</code> запрещает его обычное изменение через эту ссылку.</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+void rename(std::string&amp; s) { s = &quot;new&quot;; }
+std::size_t length(const std::string&amp; s) { return s.size(); }
+int main() {
+    std::string name = &quot;old&quot;;
+    rename(name);
+    std::cout &lt;&lt; name &lt;&lt; ' ' &lt;&lt; length(name); // new 3
+}
+</code></pre>
+<p>Для небольшого <code>int</code> обычно подходит значение; для чтения большой строки — <code>const std::string&amp;</code>; для изменения аргумента — <code>std::string&amp;</code>. Само наличие <code>const T&amp;</code> не делает объект владельцем ресурса и не разрешает сохранить ссылку на временный аргумент для использования после окончания его времени жизни.</p>
+<hr />
+</div></details></section><section class="lesson" id="lecture-5" data-lecture="5"><h1 id="лекция-5-классы-и-инкапсуляция">Лекция 5. Классы и инкапсуляция</h1>
+<details class="topic"  id="51-struct-vs-class"><summary><span>5.1. struct vs class</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<p>Единственные языковые различия: для <code>struct</code> <strong>доступ по умолчанию <code>public</code></strong> и <strong>наследование по умолчанию <code>public</code></strong>; для <code>class</code> оба по умолчанию <code>private</code>. Оба могут иметь конструкторы, деструкторы, виртуальные методы, шаблоны и перегрузки.</p>
+<pre><code class="language-cpp">struct Point { int x, y; }; // public
+class Counter { int value_; }; // private
+</code></pre>
+</div></details><details class="topic"  id="52-поля-и-методы-внутри-и-снаружи"><summary><span>5.2. Поля и методы: внутри и снаружи</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">class Rectangle {
+    double width_ = 1.0;
+    double height_ = 1.0;
+public:
+    double area() const;           // объявление
+    void resize(double w, double h) { width_ = w; height_ = h; }
+};
+double Rectangle::area() const { return width_ * height_; }
+</code></pre>
+<p>Поля принадлежат конкретному объекту (кроме <code>static</code>). Методы получают неявный параметр объекта; определение вне класса требует <code>ClassName::</code>. В C++20 неявный объект традиционно доступен через <code>this</code>.</p>
+</div></details><details class="topic"  id="53-public-protected-private"><summary><span>5.3. public, protected, private</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<ul>
+<li><code>public</code>: доступен клиентскому коду.</li>
+<li><code>protected</code>: доступен самому классу, друзьям и определённым образом производным классам.</li>
+<li><code>private</code>: доступен методам и друзьям <strong>своего</strong> класса, но не напрямую наследникам.</li>
+</ul>
+<p>Инкапсуляция — не просто «сделать всё private», а защитить <strong>инварианты</strong>: например, ширина прямоугольника не должна становиться отрицательной.</p>
+<pre><code class="language-cpp">class Account {
+    int balance_ = 0;
+public:
+    explicit Account(int initial) : balance_(initial) {
+        if (initial &lt; 0) throw std::invalid_argument(&quot;negative&quot;);
+    }
+    int balance() const { return balance_; }
+    void deposit(int amount) {
+        if (amount &lt;= 0) throw std::invalid_argument(&quot;amount&quot;);
+        balance_ += amount; // в реальном коде ещё проверяют переполнение
+    }
+};
+</code></pre>
+</div></details><details class="topic"  id="54-this-и-fluent-interface"><summary><span>5.4. this и fluent interface</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<p><code>this</code> — указатель на текущий объект. В обычном методе класса <code>T</code> тип <code>this</code> — <code>T* const</code> в смысле неизменяемого значения указателя; в <code>const</code>-методе он указывает на <code>const T</code>. Нельзя присвоить <code>this</code> другой адрес.</p>
+<pre><code class="language-cpp">class Builder {
+    int x_{};
+public:
+    Builder&amp; setX(int x) {
+        this-&gt;x_ = x;
+        return *this; // цепочка вызовов
+    }
+};
+Builder b;
+b.setX(1).setX(2);
+</code></pre>
+<p><code>this-&gt;x_</code> нужен, когда имя параметра перекрывает имя поля, а в некоторых шаблонных случаях — для поиска имён зависимых базовых классов.</p>
+</div></details><details class="topic"  id="55-const-методы-и-mutable"><summary><span>5.5. const-методы и mutable</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">class Sensor {
+    int value_ = 10;
+    mutable int reads_ = 0;
+public:
+    int get() const { ++reads_; return value_; }
+};
+</code></pre>
+<p><code>int get() const</code> не позволяет менять обычные нестатические поля через этот объект. <code>mutable</code> разрешает менять <strong>конкретное поле</strong> даже в <code>const</code>-методе, например счётчик чтений или кеш. Это не делает операцию потокобезопасной: при многопоточном доступе потребуется синхронизация. Перегрузка по <code>const</code>:</p>
+<pre><code class="language-cpp">class Box {
+    int x_{};
+public:
+    int&amp; get() { return x_; }
+    const int&amp; get() const { return x_; }
+};
+</code></pre>
+</div></details><details class="topic"  id="56-статические-поля-и-методы"><summary><span>5.6. Статические поля и методы</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">class Counter {
+    inline static int count_ = 0; // C++17+, определение в классе
+public:
+    Counter() { ++count_; }
+    static int count() { return count_; }
+};
+</code></pre>
+<p><code>static</code>-поле общее для всех объектов класса; <code>static</code>-метод <strong>не имеет <code>this</code></strong> и не может непосредственно обращаться к нестатическим полям без объекта. <code>inline static</code> удобен для определения поля в заголовке. Счётчик живых объектов должен учитывать также копирование и уничтожение, иначе он будет неверным.</p>
+</div></details><details class="topic"  id="57-friend-функции-и-классы"><summary><span>5.7. friend: функции и классы</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">class Secret {
+    int value_ = 7;
+    friend int reveal(const Secret&amp; s);
+};
+int reveal(const Secret&amp; s) { return s.value_; }
+</code></pre>
+<p><code>friend</code> даёт выбранной функции или классу доступ к закрытым членам, но <strong>не делает её методом</strong>. Дружба <strong>не транзитивна</strong>, <strong>не наследуется</strong> и не обязана быть взаимной. Используйте её для тесно связанных операций, например свободного <code>operator&lt;&lt;</code>, не для обхода архитектуры.</p>
+</div></details><details class="topic"  id="58-вложенные-классы-и-enum-class"><summary><span>5.8. Вложенные классы и enum class</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">class Graph {
+public:
+    struct Node { int id; };
+    enum class Color { Red, Green, Blue };
+};
+Graph::Node n{1};
+Graph::Color c = Graph::Color::Red;
+</code></pre>
+<p>Вложенный тип имеет собственное имя внутри области видимости класса. <code>enum class</code> — строго типизированное перечисление, его элементы квалифицируются (<code>Color::Red</code>), не превращаются неявно в <code>int</code>; при необходимости <code>static_cast&lt;int&gt;(c)</code>.</p>
+</div></details><details class="topic"  id="59-sizeof-alignment-padding"><summary><span>5.9. sizeof, alignment, padding</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">struct Example {
+    char a;
+    int b;
+    char c;
+};
+</code></pre>
+<p>При типичных <code>sizeof(int) == 4</code>, <code>alignof(int) == 4</code> и однобайтовом <code>char</code> раскладка может быть такой:</p>
+<table>
+<thead>
+<tr>
+<th>Часть объекта</th>
+<th>Размер в байтах</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>a</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td>Padding перед <code>b</code></td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>b</code></td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>c</code></td>
+<td>1</td>
+</tr>
+<tr>
+<td>Padding в конце</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<p>Итого часто 12 байт; стандарт не гарантирует именно такую раскладку.</p>
+<p><code>alignof(T)</code> — требуемое выравнивание типа. Компилятор может добавлять промежуточные и хвостовые байты padding. Порядок объявления полей влияет на размер; перестановка полей иногда уменьшает padding. <code>sizeof(empty class)</code> <strong>не равен нулю</strong> (обычно 1), чтобы разные полные объекты могли иметь различимые адреса. В C++20 есть <code>[[no_unique_address]]</code>, позволяющий оптимизировать размещение некоторых полей.</p>
+</div></details><details class="topic"  id="510-инкапсуляция-и-pimpl"><summary><span>5.10. Инкапсуляция и PIMPL</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<p><strong>PIMPL (Pointer to IMPLementation)</strong> скрывает детали реализации за указателем на неполный тип, уменьшает зависимости заголовков и может стабилизировать ABI:</p>
+<pre><code class="language-cpp">// widget.hpp
+#include &lt;memory&gt;
+class Widget {
+    struct Impl;
+    std::unique_ptr&lt;Impl&gt; impl_;
+public:
+    Widget();
+    ~Widget();                 // определяем в .cpp после Impl
+    Widget(Widget&amp;&amp;) noexcept;
+    Widget&amp; operator=(Widget&amp;&amp;) noexcept;
+};
+</code></pre>
+<p>В <code>.cpp</code> определяют <code>Widget::Impl</code>, конструктор, деструктор и move-операции. Если оставить деструктор <code>unique_ptr&lt;Impl&gt;</code> неудачно определённым inline там, где <code>Impl</code> неполный, возникнут проблемы с требованием полноты типа при уничтожении. <strong>Компромисс:</strong> PIMPL добавляет динамическую аллокацию и косвенный доступ.</p>
+<hr />
+</div></details><details class="topic"  id="511-разбор-инвариант-важнее-набора-getset"><summary><span>5.11. Разбор: инвариант важнее набора get/set</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<p>Инвариант — условие, которое должен сохранять объект в предусмотренных контрактом состояниях. Например, прямоугольник не должен иметь неположительные размеры. Закрытые поля сами по себе недостаточны: публичные методы тоже обязаны поддерживать условие.</p>
+<pre><code class="language-cpp">#include &lt;stdexcept&gt;
+class Rectangle {
+    double width_;
+    double height_;
+public:
+    Rectangle(double w, double h) : width_(w), height_(h) {
+        if (!(w &gt; 0) || !(h &gt; 0)) throw std::invalid_argument(&quot;size&quot;);
+    }
+    double area() const { return width_ * height_; }
+    void resize(double w, double h) {
+        if (!(w &gt; 0) || !(h &gt; 0)) throw std::invalid_argument(&quot;size&quot;);
+        width_ = w;
+        height_ = h;
+    }
+};
+</code></pre>
+<p>Проверка перед присваиванием сохраняет прежнее состояние при неверных размерах. Запись <code>!(w &gt; 0)</code> также отклоняет NaN. Если нужен контракт только для конечных размеров, дополнительно проверяют <code>std::isfinite</code> из <code>&lt;cmath&gt;</code>.</p>
+<hr />
+</div></details></section><section class="lesson" id="lecture-6" data-lecture="6"><h1 id="лекция-6-конструкторы-деструкторы-raii-и-copymove">Лекция 6. Конструкторы, деструкторы, RAII и copy/move</h1>
+<details class="topic"  id="61-какие-бывают-конструкторы"><summary><span>6.1. Какие бывают конструкторы</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">class Value {
+    int x_{};
+public:
+    Value() = default;                // конструктор по умолчанию
+    explicit Value(int x) : x_(x) {} // преобразующий конструктор
+    Value(const Value&amp;) = default;   // копирующий
+    Value(Value&amp;&amp;) = default;        // перемещающий
+};
+</code></pre>
+<p>Конструктор создаёт объект и не имеет возвращаемого типа. <strong>Default constructor</strong> можно вызвать без аргументов. <strong>Copy constructor</strong> обычно принимает <code>const T&amp;</code>, <strong>move constructor</strong> — <code>T&amp;&amp;</code>. Компилятор может автоматически объявлять/определять специальные методы, но это зависит от пользовательских объявлений других специальных методов.</p>
+</div></details><details class="topic"  id="62-список-инициализации-членов-mil-и-порядок"><summary><span>6.2. Список инициализации членов (MIL) и порядок</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">struct Example {
+    int a;
+    int b;
+    Example() : b(2), a(b) {} // ОПАСНО: a инициализируется раньше b
+};
+</code></pre>
+<p><strong>Фактический порядок:</strong> виртуальные базы (в наиболее производном классе) → непосредственные базы по порядку объявления → поля по порядку объявления в классе → тело конструктора. Порядок элементов в <code>: b(...), a(...)</code> <strong>не управляет</strong> порядком. В примере чтение <code>b</code> до инициализации недопустимо; пишите <code>: a(1), b(a+1)</code> и располагайте поля осмысленно. Для <code>const</code>-полей и ссылок список инициализации обычно обязателен.</p>
+<p><img alt="Порядок создания и разрушения объекта" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAwIiBoZWlnaHQ9IjUyMCIgdmlld0JveD0iMCAwIDEwMDAgNTIwIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9ItCS0YDQtdC80Y8g0LbQuNC30L3QuCBEZXJpdmVkOiDRgdC+0LfQtNCw0L3QuNC1INC4INGA0LDQt9GA0YPRiNC10L3QuNC1Ij48cmVjdCB3aWR0aD0iMTAwMCIgaGVpZ2h0PSI1MjAiIHJ4PSIyMCIgZmlsbD0iI2YxZjVmOSIvPjx0ZXh0IHg9IjM0IiB5PSI0OCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjUiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMGYxNzJhIj7QktGA0LXQvNGPINC20LjQt9C90LggRGVyaXZlZDog0YHQvtC30LTQsNC90LjQtSDQuCDRgNCw0LfRgNGD0YjQtdC90LjQtTwvdGV4dD48cmVjdCB4PSIyOCIgeT0iNzYiIHdpZHRoPSI5NDQiIGhlaWdodD0iNjYiIHJ4PSIxMCIgZmlsbD0id2hpdGUiIHN0cm9rZT0iI2NiZDVlMSIvPjxyZWN0IHg9IjI4IiB5PSI3NiIgd2lkdGg9IjciIGhlaWdodD0iNjYiIHJ4PSIzIiBmaWxsPSIjMDI4NGM3Ii8+PHRleHQgeD0iNDgiIHk9IjEwMyIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTkiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMDc1OTg1Ij4xLiDQktC40YDRgtGD0LDQu9GM0L3Ri9C1INCx0LDQt9GLPC90ZXh0Pjx0ZXh0IHg9IjQ4IiB5PSIxMjciIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE3IiBmaWxsPSIjMzM0MTU1Ij7QmNC90LjRhtC40LDQu9C40LfQuNGA0YPQtdGCINC90LDQuNCx0L7Qu9C10LUg0L/RgNC+0LjQt9Cy0L7QtNC90YvQuSDQutC70LDRgdGBOyDQtNCw0LvQtdC1IOKAlCDQv9GA0Y/QvNGL0LUg0LHQsNC30YsuPC90ZXh0PjxyZWN0IHg9IjI4IiB5PSIxNTkiIHdpZHRoPSI5NDQiIGhlaWdodD0iNjYiIHJ4PSIxMCIgZmlsbD0id2hpdGUiIHN0cm9rZT0iI2NiZDVlMSIvPjxyZWN0IHg9IjI4IiB5PSIxNTkiIHdpZHRoPSI3IiBoZWlnaHQ9IjY2IiByeD0iMyIgZmlsbD0iIzAyODRjNyIvPjx0ZXh0IHg9IjQ4IiB5PSIxODYiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE5IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iIzA3NTk4NSI+Mi4g0J/RgNGP0LzRi9C1INCx0LDQt9GLPC90ZXh0Pjx0ZXh0IHg9IjQ4IiB5PSIyMTAiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE3IiBmaWxsPSIjMzM0MTU1Ij7QkiDQv9C+0YDRj9C00LrQtSDQvtCx0YrRj9Cy0LvQtdC90LjRjyDQsiDRgdC/0LjRgdC60LUg0L3QsNGB0LvQtdC00L7QstCw0L3QuNGPLCDQutCw0LbQtNCw0Y8g0YHQviDRgdCy0L7QuNC80Lgg0L/QvtC70Y/QvNC4LjwvdGV4dD48cmVjdCB4PSIyOCIgeT0iMjQyIiB3aWR0aD0iOTQ0IiBoZWlnaHQ9IjY2IiByeD0iMTAiIGZpbGw9IndoaXRlIiBzdHJva2U9IiNjYmQ1ZTEiLz48cmVjdCB4PSIyOCIgeT0iMjQyIiB3aWR0aD0iNyIgaGVpZ2h0PSI2NiIgcng9IjMiIGZpbGw9IiMwMjg0YzciLz48dGV4dCB4PSI0OCIgeT0iMjY5IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMwNzU5ODUiPjMuINCf0L7Qu9GPIERlcml2ZWQ8L3RleHQ+PHRleHQgeD0iNDgiIHk9IjI5MyIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTciIGZpbGw9IiMzMzQxNTUiPtCSINC/0L7RgNGP0LTQutC1INC+0LHRitGP0LLQu9C10L3QuNGPINCyINC60LvQsNGB0YHQtSwg0L3QtdC30LDQstC40YHQuNC80L4g0L7RgiDRgdC/0LjRgdC60LAg0LjQvdC40YbQuNCw0LvQuNC30LDRhtC40LguPC90ZXh0PjxyZWN0IHg9IjI4IiB5PSIzMjUiIHdpZHRoPSI5NDQiIGhlaWdodD0iNjYiIHJ4PSIxMCIgZmlsbD0id2hpdGUiIHN0cm9rZT0iI2NiZDVlMSIvPjxyZWN0IHg9IjI4IiB5PSIzMjUiIHdpZHRoPSI3IiBoZWlnaHQ9IjY2IiByeD0iMyIgZmlsbD0iIzAyODRjNyIvPjx0ZXh0IHg9IjQ4IiB5PSIzNTIiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE5IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iIzA3NTk4NSI+NC4g0KLQtdC70L4g0LrQvtC90YHRgtGA0YPQutGC0L7RgNCwIERlcml2ZWQ8L3RleHQ+PHRleHQgeD0iNDgiIHk9IjM3NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTciIGZpbGw9IiMzMzQxNTUiPtCS0YHQtSDQsdCw0LfRiyDQuCDQv9C+0LvRjyDRg9C20LUg0LjQvdC40YbQuNCw0LvQuNC30LjRgNC+0LLQsNC90YsuPC90ZXh0PjxyZWN0IHg9IjI4IiB5PSI0MDgiIHdpZHRoPSI5NDQiIGhlaWdodD0iNjYiIHJ4PSIxMCIgZmlsbD0id2hpdGUiIHN0cm9rZT0iI2NiZDVlMSIvPjxyZWN0IHg9IjI4IiB5PSI0MDgiIHdpZHRoPSI3IiBoZWlnaHQ9IjY2IiByeD0iMyIgZmlsbD0iIzAyODRjNyIvPjx0ZXh0IHg9IjQ4IiB5PSI0MzUiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE5IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iIzA3NTk4NSI+NS4g0KDQsNC30YDRg9GI0LXQvdC40LU8L3RleHQ+PHRleHQgeD0iNDgiIHk9IjQ1OSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTciIGZpbGw9IiMzMzQxNTUiPtCi0LXQu9C+IH5EZXJpdmVkIOKGkiDQv9C+0LvRjyDQsiDQvtCx0YDQsNGC0L3QvtC8INC/0L7RgNGP0LTQutC1IOKGkiDQsdCw0LfRiyDQsiDQvtCx0YDQsNGC0L3QvtC8INC/0L7RgNGP0LTQutC1LjwvdGV4dD48L3N2Zz4=" /></p>
+<p>При исключении из конструктора уничтожаются уже полностью созданные подобъекты. Деструктор самого недостроенного объекта не вызывается.</p>
+</div></details><details class="topic"  id="63-делегирующие-конструкторы"><summary><span>6.3. Делегирующие конструкторы</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">class Point {
+    int x_, y_;
+public:
+    Point() : Point(0, 0) {} // делегирование
+    Point(int x, int y) : x_(x), y_(y) {}
+};
+</code></pre>
+<p>Делегирующий конструктор вызывает другой конструктор <strong>того же класса</strong>. Если список инициализации делегирует, в нём не должно быть дополнительных инициализаторов полей. Циклическое делегирование недопустимо.</p>
+</div></details><details class="topic"  id="64-explicit-и-неявные-преобразования"><summary><span>6.4. explicit и неявные преобразования</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">class Distance {
+public:
+    explicit Distance(int meters) {}
+};
+Distance a(5);  // OK
+Distance b{5};  // OK
+// Distance c = 5; // ошибка: explicit запрещает неявную конверсию
+</code></pre>
+<p><code>explicit</code> предотвращает неожиданное преобразование <code>int → Distance</code>. В C++20 есть условный <code>explicit(condition)</code>. Для конструкторов с одним параметром (или несколькими с умолчаниями) <code>explicit</code> часто хорошая практика; он также применим к операторам преобразования типа.</p>
+</div></details><details class="topic"  id="65-default-delete-и-генерация-специальных-методов"><summary><span>6.5. =default, =delete и генерация специальных методов</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<p><code>= default</code> просит компилятор сгенерировать специальную функцию по правилам языка; <code>= delete</code> запрещает её использование.</p>
+<pre><code class="language-cpp">class NonCopyable {
+public:
+    NonCopyable() = default;
+    NonCopyable(const NonCopyable&amp;) = delete;
+    NonCopyable&amp; operator=(const NonCopyable&amp;) = delete;
+};
+</code></pre>
+<p><strong>Ключевая тонкость:</strong> пользовательски объявленный деструктор, copy constructor или copy assignment препятствует <strong>неявному объявлению move constructor/move assignment</strong>. Наличие пользовательского move может сделать неявные copy-операции удалёнными. <code>=default</code> не означает, что операция обязательно доступна: она может быть определена как удалённая из-за полей/баз. <strong>Rule of Zero</strong> рекомендует не писать эти методы, если поля уже правильно управляют ресурсами.</p>
+</div></details><details class="topic"  id="66-деструктор-и-обратный-порядок-уничтожения"><summary><span>6.6. Деструктор и обратный порядок уничтожения</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">struct A { ~A() { std::cout &lt;&lt; &quot;A &quot;; } };
+struct B { ~B() { std::cout &lt;&lt; &quot;B &quot;; } };
+struct C {
+    A a;
+    B b;
+    ~C() { std::cout &lt;&lt; &quot;C &quot;; }
+};
+// При уничтожении C: сначала тело ~C -&gt; &quot;C &quot;, затем b -&gt; &quot;B &quot;, затем a -&gt; &quot;A &quot;
+</code></pre>
+<p>Деструктор <code>~T()</code> вызывается при окончании времени жизни объекта; его тело выполняется <strong>до</strong> уничтожения полей и баз. Для локальных объектов в одном блоке уничтожение обычно идёт в порядке, обратном успешному конструированию. При исключении из конструктора деструктор <strong>самого недостроенного объекта не вызывается</strong>, но уже построенные базы и поля уничтожаются.</p>
+</div></details><details class="topic"  id="67-raii-resource-acquisition-is-initialization"><summary><span>6.7. RAII — Resource Acquisition Is Initialization</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<p><strong>Идея:</strong> ресурс захватывается при создании объекта, освобождается в его деструкторе. Работает и при обычном <code>return</code>, и при раскрутке стека из-за исключения.</p>
+<pre><code class="language-cpp">#include &lt;fstream&gt;
+void write() {
+    std::ofstream out(&quot;log.txt&quot;);
+    out &lt;&lt; &quot;hello\n&quot;;
+} // out закрывает файл автоматически
+</code></pre>
+<p><code>std::vector</code>, <code>std::string</code>, <code>std::unique_ptr</code>, <code>std::lock_guard</code>, <code>std::fstream</code> — примеры RAII. Владение должно быть однозначным. <strong>Сильный принцип:</strong> если ресурс можно представить RAII-объектом, избегайте голого <code>new/delete</code> в прикладном коде.</p>
+</div></details><details class="topic"  id="68-время-жизни-и-временные-объекты"><summary><span>6.8. Время жизни и временные объекты</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">std::string makeName() { return &quot;Ada&quot;; }
+const std::string&amp; s = makeName(); // временный живёт до конца жизни s
+</code></pre>
+<p>Но:</p>
+<pre><code class="language-cpp">const std::string&amp; bad() {
+    return std::string(&quot;temp&quot;); // возвращается висячая ссылка
+}
+</code></pre>
+<p>Нельзя считать, что продление времени жизни «передаётся» через возвращаемую ссылку. Временные объекты обычно уничтожаются в конце полного выражения, если специальное правило не продлевает их жизнь. Для параметра-ссылки, связанного с временным в вызове функции, временный обычно живёт до конца полного выражения с вызовом, а не до конца жизни параметра.</p>
+</div></details><details class="topic"  id="69-copy-vs-move-и-владение-динамической-памятью"><summary><span>6.9. Copy vs move и владение динамической памятью</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<p>При глубоком копировании <code>b</code> получает собственную копию ресурса <code>a</code>. При перемещении ресурс может перейти от <code>a</code> к <code>b</code>; состояние источника определяется контрактом класса. Перемещение само по себе не означает, что источник обязательно становится пустым.</p>
+<p>Если класс владеет <code>int*</code>, неявное почленное копирование указателя создаёт <strong>два владельца одного блока</strong>, что приводит к double delete. Правильное копирование создаёт новый ресурс, перемещение передаёт владение и оставляет источник в допустимом состоянии.</p>
+<pre><code class="language-cpp">#include &lt;algorithm&gt;
+#include &lt;cstddef&gt;
+#include &lt;utility&gt;
+class Buffer {
+    std::size_t size_ = 0;
+    int* data_ = nullptr;
+public:
+    explicit Buffer(std::size_t n) : size_(n), data_(new int[n]{}) {}
+    ~Buffer() { delete[] data_; }
+
+    Buffer(const Buffer&amp; other)
+        : size_(other.size_), data_(new int[other.size_]) {
+        if (size_ != 0) std::copy(other.data_, other.data_ + size_, data_);
+    }
+    Buffer(Buffer&amp;&amp; other) noexcept
+        : size_(std::exchange(other.size_, 0)),
+          data_(std::exchange(other.data_, nullptr)) {}
+
+    Buffer&amp; operator=(const Buffer&amp; other) {
+        if (this != &amp;other) {
+            Buffer tmp(other);   // сначала безопасно скопировать
+            swap(tmp);           // затем обменяться ресурсами
+        }
+        return *this;
+    }
+    Buffer&amp; operator=(Buffer&amp;&amp; other) noexcept {
+        if (this != &amp;other) {
+            delete[] data_;
+            size_ = std::exchange(other.size_, 0);
+            data_ = std::exchange(other.data_, nullptr);
+        }
+        return *this;
+    }
+    void swap(Buffer&amp; other) noexcept {
+        using std::swap;
+        swap(size_, other.size_);
+        swap(data_, other.data_);
+    }
+};
+</code></pre>
+<p><strong>Тонкость:</strong> проверка <code>size_ != 0</code> в копирующем конструкторе важна для перемещённого источника, у которого <code>data_ == nullptr</code>: не нужно формировать диапазон из нулевого указателя. Уточнение для C++20: прибавление нуля к нулевому указателю допустимо и даёт нулевой указатель; ненулевое смещение недопустимо.</p>
+<p>В реальном проекте лучше <code>std::vector&lt;int&gt; data_</code> и <strong>Rule of Zero</strong>: компилятор автоматически обеспечивает корректные копирование, перемещение и уничтожение.</p>
+<p><img alt="Копирование, перемещение и ссылка" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAwIiBoZWlnaHQ9IjQzNyIgdmlld0JveD0iMCAwIDEwMDAgNDM3IiByb2xlPSJpbWciIGFyaWEtbGFiZWw9ItCa0L7Qv9C40Y8sINC/0LXRgNC10LzQtdGJ0LXQvdC40LUg0Lgg0YHRgdGL0LvQutCwOiDRgtGA0Lgg0YDQsNC30L3Ri9GFINC00LXQudGB0YLQstC40Y8iPjxyZWN0IHdpZHRoPSIxMDAwIiBoZWlnaHQ9IjQzNyIgcng9IjIwIiBmaWxsPSIjZjFmNWY5Ii8+PHRleHQgeD0iMzQiIHk9IjQ4IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMwZjE3MmEiPtCa0L7Qv9C40Y8sINC/0LXRgNC10LzQtdGJ0LXQvdC40LUg0Lgg0YHRgdGL0LvQutCwOiDRgtGA0Lgg0YDQsNC30L3Ri9GFINC00LXQudGB0YLQstC40Y88L3RleHQ+PHJlY3QgeD0iMjgiIHk9Ijc2IiB3aWR0aD0iOTQ0IiBoZWlnaHQ9IjY2IiByeD0iMTAiIGZpbGw9IndoaXRlIiBzdHJva2U9IiNjYmQ1ZTEiLz48cmVjdCB4PSIyOCIgeT0iNzYiIHdpZHRoPSI3IiBoZWlnaHQ9IjY2IiByeD0iMyIgZmlsbD0iIzAyODRjNyIvPjx0ZXh0IHg9IjQ4IiB5PSIxMDMiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE5IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iIzA3NTk4NSI+0JPQu9GD0LHQvtC60LDRjyDQutC+0L/QuNGPOiBCINGB0L7Qt9C00LDRkdGCINGB0L7QsdGB0YLQstC10L3QvdGL0Lkg0YDQtdGB0YPRgNGBPC90ZXh0Pjx0ZXh0IHg9IjQ4IiB5PSIxMjciIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE3IiBmaWxsPSIjMzM0MTU1Ij5BIOKGkiDQsdC70L7QuiAxOyBCIOKGkiDQsdC70L7QuiAyLiDQmNC30LzQtdC90LXQvdC40LUgQiDQvdC1INC80LXQvdGP0LXRgiDQtNCw0L3QvdGL0LUgQS48L3RleHQ+PHJlY3QgeD0iMjgiIHk9IjE1OSIgd2lkdGg9Ijk0NCIgaGVpZ2h0PSI2NiIgcng9IjEwIiBmaWxsPSJ3aGl0ZSIgc3Ryb2tlPSIjY2JkNWUxIi8+PHJlY3QgeD0iMjgiIHk9IjE1OSIgd2lkdGg9IjciIGhlaWdodD0iNjYiIHJ4PSIzIiBmaWxsPSIjMDI4NGM3Ii8+PHRleHQgeD0iNDgiIHk9IjE4NiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTkiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMDc1OTg1Ij7Qn9C10YDQtdC80LXRidC10L3QuNC1INCy0LvQsNC00LXQu9GM0YbQsDog0YDQtdGB0YPRgNGBINC/0LXRgNC10LTQsNGR0YLRgdGPIEI8L3RleHQ+PHRleHQgeD0iNDgiIHk9IjIxMCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTciIGZpbGw9IiMzMzQxNTUiPtCU0L46IEEg4oaSINCx0LvQvtC6IDEuINCf0L7RgdC70LU6IEIg4oaSINCx0LvQvtC6IDE7INGB0L7RgdGC0L7Rj9C90LjQtSBBINC30LDQtNCw0ZHRgiDRgNC10LDQu9C40LfQsNGG0LjRjyDQutC70LDRgdGB0LAuPC90ZXh0PjxyZWN0IHg9IjI4IiB5PSIyNDIiIHdpZHRoPSI5NDQiIGhlaWdodD0iNjYiIHJ4PSIxMCIgZmlsbD0id2hpdGUiIHN0cm9rZT0iI2NiZDVlMSIvPjxyZWN0IHg9IjI4IiB5PSIyNDIiIHdpZHRoPSI3IiBoZWlnaHQ9IjY2IiByeD0iMyIgZmlsbD0iIzAyODRjNyIvPjx0ZXh0IHg9IjQ4IiB5PSIyNjkiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE5IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iIzA3NTk4NSI+0KHRgdGL0LvQutCwOiDQvdC+0LLQvtCz0L4g0L7QsdGK0LXQutGC0LAg0Lgg0L3QvtCy0L7Qs9C+INCy0LvQsNC00LXQu9GM0YbQsCDQvdC10YI8L3RleHQ+PHRleHQgeD0iNDgiIHk9IjI5MyIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTciIGZpbGw9IiMzMzQxNTUiPlQmYW1wOyBhbGlhcyA9IEE7IGFsaWFzINC4IEEg0L7QsdC+0LfQvdCw0YfQsNGO0YIg0L7QtNC40L0g0L7QsdGK0LXQutGCLjwvdGV4dD48cmVjdCB4PSIyOCIgeT0iMzI1IiB3aWR0aD0iOTQ0IiBoZWlnaHQ9IjY2IiByeD0iMTAiIGZpbGw9IndoaXRlIiBzdHJva2U9IiNjYmQ1ZTEiLz48cmVjdCB4PSIyOCIgeT0iMzI1IiB3aWR0aD0iNyIgaGVpZ2h0PSI2NiIgcng9IjMiIGZpbGw9IiMwMjg0YzciLz48dGV4dCB4PSI0OCIgeT0iMzUyIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMwNzU5ODUiPnN0ZDo6bW92ZShBKTog0YLQvtC70YzQutC+INC40LfQvNC10L3QtdC90LjQtSDQutCw0YLQtdCz0L7RgNC40Lgg0LLRi9GA0LDQttC10L3QuNGPPC90ZXh0Pjx0ZXh0IHg9IjQ4IiB5PSIzNzYiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE3IiBmaWxsPSIjMzM0MTU1Ij7QktGL0LHQvtGAIGNvcHkvbW92ZSDQt9Cw0LLQuNGB0LjRgiDQvtGCINC/0LXRgNC10LPRgNGD0LfQvtC6LCDQtNC+0YHRgtGD0L/QvdC+0YHRgtC4INC80LXRgtC+0LTQvtCyINC4IGNvbnN0LjwvdGV4dD48L3N2Zz4=" /></p>
+<p>Указатель сам по себе не выражает владение. Глубокое копирование — решение автора класса.</p>
+</div></details><details class="topic"  id="610-правило-трёх-пяти-и-нуля"><summary><span>6.10. Правило трёх, пяти и нуля</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<ul>
+<li><strong>Rule of Three:</strong> если нужен пользовательский деструктор, часто нужны copy constructor и copy assignment.</li>
+<li><strong>Rule of Five:</strong> при ручном владении дополнительно рассмотрите move constructor и move assignment.</li>
+<li><strong>Rule of Zero:</strong> если ресурсы хранятся в RAII-полях, специальные функции лучше не объявлять вовсе.</li>
+</ul>
+<p><strong>Ловушка:</strong> <code>std::move(x)</code> не гарантирует вызов move-конструктора: если подходящего move нет, может быть вызван copy-конструктор, принимающий <code>const T&amp;</code>. <code>noexcept</code> для move важен: некоторые контейнеры предпочитают копирование перемещению, которое может бросить исключение, чтобы сохранить гарантии безопасности.</p>
+<hr />
+</div></details><details class="topic"  id="611-практика-инициализация-присваивание-и-move-из-const"><summary><span>6.11. Практика: инициализация, присваивание и move из const</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;utility&gt;
+struct Item {
+    Item() = default;
+    Item(const Item&amp;) { std::cout &lt;&lt; &quot;copy\n&quot;; }
+    Item(Item&amp;&amp;) noexcept { std::cout &lt;&lt; &quot;move\n&quot;; }
+    Item&amp; operator=(const Item&amp;) {
+        std::cout &lt;&lt; &quot;copy assignment\n&quot;;
+        return *this;
+    }
+};
+int main() {
+    Item a;
+    Item b = a;                 // copy: новый объект, не operator=
+    b = a;                      // copy assignment: объект уже существует
+    Item c = std::move(a);      // move
+    const Item d;
+    Item e = std::move(d);      // copy: const Item&amp;&amp; не подходит к Item&amp;&amp;
+}
+</code></pre>
+<p><strong>Вывод:</strong> <code>copy</code>, <code>copy assignment</code>, <code>move</code>, <code>copy</code> — по одной строке. <code>std::move</code> сохраняет <code>const</code>. Пользовательское объявление деструктора (даже <code>= default</code>) подавляет неявное объявление move-операций; копирование при этом иногда позволяет выражению с rvalue успешно компилироваться.</p>
+<table>
+<thead>
+<tr>
+<th>Объявление в классе</th>
+<th>Последствие</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ни одной специальной функции</td>
+<td>Компилятор объявляет специальные функции по правилам языка; часть может оказаться удалённой</td>
+</tr>
+<tr>
+<td>Пользовательский конструктор с параметрами</td>
+<td>Неявного конструктора без параметров больше нет</td>
+</tr>
+<tr>
+<td>Пользовательский деструктор</td>
+<td>Move автоматически не объявляется</td>
+</tr>
+<tr>
+<td>Пользовательский copy constructor / copy assignment</td>
+<td>Move автоматически не объявляется</td>
+</tr>
+<tr>
+<td>Пользовательский move constructor / move assignment</td>
+<td>Неявные copy-операции определяются как удалённые</td>
+</tr>
+<tr>
+<td>Поле <code>unique_ptr&lt;T&gt;</code></td>
+<td>Копирование по умолчанию удалено; перемещение возможно при выполнении остальных условий</td>
+</tr>
+</tbody>
+</table>
+<p><code>= default</code> просит компилятор реализовать функцию, но не гарантирует, что она будет доступна: например, ссылочное поле или <code>const int</code> мешает автоматически сгенерированному присваиванию.</p>
+<hr />
+</div></details></section><section class="lesson" id="lecture-7" data-lecture="7"><h1 id="лекция-7-перегрузка-операторов">Лекция 7. Перегрузка операторов</h1>
+<details class="topic"  id="71-основные-правила"><summary><span>7.1. Основные правила</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<p>Перегруженный оператор — функция с особым синтаксисом вызова. Хотя бы один операнд перегружаемого оператора должен иметь классный или перечислимый тип; нельзя изменить работу <code>int + int</code>, создать новый оператор или поменять приоритет/число операндов. Нельзя перегрузить <code>::</code>, <code>.</code>, <code>.*</code>, <code>?:</code> и <code>sizeof</code>.</p>
+<p>Метод <code>T::operator+(...)</code> имеет неявный левый операнд <code>*this</code>; свободная функция <code>operator+(T, U)</code> принимает оба операнда явно. Для симметричных бинарных операций свободная функция часто удобнее, потому что допускает преобразования обоих операндов.</p>
+</div></details><details class="topic"  id="72-каноническая-арифметика-и"><summary><span>7.2. Каноническая арифметика: += и +</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">struct Vec2 {
+    int x{}, y{};
+    Vec2&amp; operator+=(const Vec2&amp; rhs) {
+        x += rhs.x; y += rhs.y;
+        return *this;
+    }
+    friend Vec2 operator+(Vec2 lhs, const Vec2&amp; rhs) {
+        lhs += rhs;
+        return lhs;
+    }
+};
+</code></pre>
+<p><code>a += b</code> меняет <code>a</code> и возвращает ссылку на него. <code>a + b</code> не меняет аргументы и возвращает новый объект по значению. Реализация <code>+</code> через <code>+=</code> избегает дублирования логики. Для <code>-</code>, <code>*</code>, <code>/</code> действуют аналогичные соображения, но математическая семантика должна соответствовать типу.</p>
+</div></details><details class="topic"  id="73-префиксный-и-постфиксный-"><summary><span>7.3. Префиксный и постфиксный ++/--</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">class Counter {
+    int n_{};
+public:
+    Counter&amp; operator++() { ++n_; return *this; } // ++x
+    Counter operator++(int) {                     // x++
+        Counter old = *this;
+        ++*this;
+        return old;
+    }
+};
+</code></pre>
+<p>Параметр <code>int</code> в постфиксном операторе — <strong>фиктивный маркер</strong> для различения сигнатур. Префиксный обычно возвращает <code>T&amp;</code> на изменённый объект, постфиксный — <code>T</code> со старым значением. Аналогично <code>--</code>.</p>
+</div></details><details class="topic"  id="74-сравнение-и-в-c20"><summary><span>7.4. Сравнение и <code>&lt;=&gt;</code> в C++20</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">#include &lt;compare&gt;
+struct Point {
+    int x{}, y{};
+    auto operator&lt;=&gt;(const Point&amp;) const = default;
+};
+</code></pre>
+<p>Компилятор генерирует лексикографическое трёхстороннее сравнение членов в порядке объявления; из него могут быть переписаны <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, <code>&gt;=</code>, а <code>==</code> может быть неявно объявлен для подходящего <strong>defaulted</strong> <code>&lt;=&gt;</code>. Если написать <strong>собственный</strong>, не defaulted <code>&lt;=&gt;</code>, <code>==</code> автоматически из него не появляется.</p>
+<table>
+<thead>
+<tr>
+<th>Категория</th>
+<th>Когда подходит</th>
+<th>Особенность</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>std::strong_ordering</code></td>
+<td>целые, строгая эквивалентность</td>
+<td><code>equal</code> означает эквивалентность с возможностью подстановки</td>
+</tr>
+<tr>
+<td><code>std::weak_ordering</code></td>
+<td>эквивалентные, но различимые значения</td>
+<td><code>equivalent</code> не обязательно идентичность</td>
+</tr>
+<tr>
+<td><code>std::partial_ordering</code></td>
+<td>например, <code>double</code> с NaN</td>
+<td>возможен <code>unordered</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>auto operator&lt;=&gt;(...) const = default</code> может оказаться <strong>удалённым</strong>, если члены не поддерживают нужные сравнения. Сравнение <code>double</code> может дать <code>unordered</code> при NaN.</p>
+</div></details><details class="topic"  id="75-вводвывод-как-свободные-функции"><summary><span>7.5. Ввод/вывод как свободные функции</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">class Complex {
+    double re_{}, im_{};
+public:
+    Complex(double re, double im) : re_(re), im_(im) {}
+    friend std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const Complex&amp; c) {
+        return os &lt;&lt; c.re_ &lt;&lt; ' ' &lt;&lt; c.im_;
+    }
+    friend std::istream&amp; operator&gt;&gt;(std::istream&amp; is, Complex&amp; c) {
+        return is &gt;&gt; c.re_ &gt;&gt; c.im_;
+    }
+};
+</code></pre>
+<p>Левый операнд <code>std::cout &lt;&lt; obj</code> — <code>std::ostream</code>, поэтому для обычного синтаксиса перегрузка должна быть свободной функцией (её можно объявить <code>friend</code>). Возвращайте <strong>ссылку на поток</strong>, чтобы работали цепочки <code>cout &lt;&lt; a &lt;&lt; b</code>. Ввод принимает изменяемый объект. Для сложного формата сначала считывайте во временные переменные, затем обновляйте объект только при успешном разборе.</p>
+</div></details><details class="topic"  id="76-operator-const-и-non-const"><summary><span>7.6. operator[]: const и non-const</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">class Array2 {
+    int a_[2]{1,2};
+public:
+    int&amp; operator[](std::size_t i) { return a_[i]; }
+    const int&amp; operator[](std::size_t i) const { return a_[i]; }
+};
+</code></pre>
+<p>Неконстантный <code>operator[]</code> возвращает <code>T&amp;</code>, чтобы работало <code>a[0] = 5</code>. Константный возвращает <code>const T&amp;</code> и запрещает изменение через константный объект. В отличие от <code>std::vector::at</code>, <code>operator[]</code> часто <strong>не проверяет границы</strong>. Можно добавить проверку и бросать <code>std::out_of_range</code>.</p>
+</div></details><details class="topic"  id="77-operator-функторы"><summary><span>7.7. operator() — функторы</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">struct Adder {
+    int offset;
+    int operator()(int x) const { return x + offset; }
+};
+Adder add5{5};
+int result = add5(10); // 15
+</code></pre>
+<p>Функтор — объект с оператором вызова. В отличие от простой функции он хранит состояние. Лямбда компилируется в объект особого безымянного типа с <code>operator()</code>.</p>
+</div></details><details class="topic"  id="78-operator-и-proxy-объекты"><summary><span>7.8. operator-&gt; и proxy-объекты</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">struct Item { int value = 7; };
+struct Handle {
+    Item* p;
+    Item* operator-&gt;() const { return p; }
+};
+Item item;
+Handle h{&amp;item};
+int x = h-&gt;value; // 7
+</code></pre>
+<p>Если <code>operator-&gt;</code> возвращает указатель, выполняется доступ к члену. Если возвращает объект класса с собственным <code>operator-&gt;</code>, механизм применяется <strong>рекурсивно</strong>, пока не будет получен указатель. На этом основаны умные указатели и некоторые proxy-типы. <code>operator-&gt;</code> должен быть методом класса.</p>
+</div></details><details class="topic"  id="79-операторы-преобразования"><summary><span>7.9. Операторы преобразования</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">class Flag {
+    bool value_;
+public:
+    explicit Flag(bool v) : value_(v) {}
+    explicit operator bool() const { return value_; }
+};
+Flag f{true};
+if (f) { /* contextual conversion to bool */ }
+// bool b = f; // ошибка: explicit
+bool b = static_cast&lt;bool&gt;(f); // OK
+</code></pre>
+<p>Оператор преобразования записывается <code>operator T() const</code> <strong>без возвращаемого типа перед <code>operator</code></strong>. <code>explicit operator bool</code> допускается в контекстах логической проверки (<code>if</code>, <code>while</code>, <code>!</code>), но запрещает многие неявные конверсии.</p>
+</div></details><details class="topic"  id="710-пользовательские-литералы-и-канонические-формы"><summary><span>7.10. Пользовательские литералы и канонические формы</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">struct Meters { long double value; };
+constexpr Meters operator&quot;&quot;_m(long double x) { return {x}; }
+Meters distance = 2.5_m;
+</code></pre>
+<p>Пользовательский суффикс обычно должен начинаться с <code>_</code>, а объявление <code>operator""_m</code> располагают в подходящем пространстве имён. Литерал <code>2.5_m</code> вызывает соответствующую функцию. Перегружайте операторы только когда семантика <strong>очевидна</strong>: например, <code>+</code> для векторов, <code>[]</code> для индексируемого контейнера, <code>&lt;&lt;</code> для вывода. Не делайте <code>operator+</code> удаляющим файл или <code>operator==</code> изменяющим объект.</p>
+<hr />
+</div></details><details class="topic"  id="711-практика-класс-с-инвариантом-композицией-и-операторами"><summary><span>7.11. Практика: класс с инвариантом, композицией и операторами</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">#include &lt;cassert&gt;
+#include &lt;iostream&gt;
+#include &lt;stdexcept&gt;
+#include &lt;string&gt;
+#include &lt;utility&gt;
+#include &lt;vector&gt;
+class Student {
+    std::string name_;
+    std::vector&lt;int&gt; grades_;   // композиция; vector владеет памятью
+public:
+    explicit Student(std::string name) : name_(std::move(name)) {
+        if (name_.empty()) throw std::invalid_argument(&quot;empty name&quot;);
+    }
+    Student&amp; operator+=(int grade) {
+        if (grade &lt; 2 || grade &gt; 5) throw std::out_of_range(&quot;grade&quot;);
+        grades_.push_back(grade);
+        return *this;
+    }
+    double average() const {
+        if (grades_.empty()) return 0.0;
+        double sum = 0;
+        for (int grade : grades_) sum += grade;
+        return sum / grades_.size();
+    }
+    friend std::ostream&amp; operator&lt;&lt;(std::ostream&amp; out, const Student&amp; s) {
+        return out &lt;&lt; s.name_ &lt;&lt; &quot;: &quot; &lt;&lt; s.average();
+    }
+};
+int main() {
+    Student a{&quot;Anna&quot;};
+    (a += 5) += 3;
+    Student b = a;             // независимая копия vector и string
+    b += 5;
+    assert(a.average() == 4.0);
+    std::cout &lt;&lt; a &lt;&lt; '\n';    // Anna: 4
+    try { a += 1; }
+    catch (const std::out_of_range&amp;) { std::cout &lt;&lt; &quot;invalid grade\n&quot;; }
+    assert(a.average() == 4.0); // неверная оценка не изменила объект
+}
+</code></pre>
+<p>Здесь действует Rule of Zero. Закрытые поля защищают инвариант: имя непустое, каждая оценка от 2 до 5. Возвращение <code>Student&amp;</code> позволяет цепочки операций, <code>average() const</code> доступен для константного объекта, <code>friend</code> даёт потоковой функции доступ к полям. После перемещения стандартные поля остаются допустимыми, но имя источника может стать пустым: если нужен такой же инвариант и для перемещённого объекта, контракт класса и move-операции надо продумать отдельно.</p>
+<hr />
+</div></details></section><section class="lesson" id="lecture-8" data-lecture="8"><h1 id="лекция-8-наследование">Лекция 8. Наследование</h1>
+<details class="topic"  id="81-наследование-отношение-is-a"><summary><span>8.1. Наследование = отношение is-a</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">class Animal {
+protected:
+    std::string name_;
+public:
+    explicit Animal(std::string n) : name_(std::move(n)) {}
+    void info() const { std::cout &lt;&lt; name_; }
+};
+class Dog : public Animal {
+public:
+    Dog(std::string n) : Animal(std::move(n)) {}
+    void bark() const { std::cout &lt;&lt; &quot;woof&quot;; }
+};
+</code></pre>
+<p><code>Dog</code> — разновидность <code>Animal</code>, поэтому при <code>public</code>-наследовании <code>Dog&amp;</code> может использоваться как <code>Animal&amp;</code>. Это <strong>подстановочность</strong>: производный тип должен выполнять контракт базового. Если машина <em>имеет</em> двигатель, правильнее <code>class Car { Engine engine_; };</code>, а не <code>Car : Engine</code>.</p>
+<p>Класс <code>Animal</code> содержит <code>name_</code> и метод <code>info() const</code>. Класс <code>Dog</code> публично наследует <code>Animal</code> и добавляет <code>bark() const</code>: собака является разновидностью животного.</p>
+</div></details><details class="topic"  id="82-модификаторы-наследования"><summary><span>8.2. Модификаторы наследования</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<table>
+<thead>
+<tr>
+<th>Доступ члена в Base</th>
+<th><code>public Base</code></th>
+<th><code>protected Base</code></th>
+<th><code>private Base</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public</code></td>
+<td>public</td>
+<td>protected</td>
+<td>private</td>
+</tr>
+<tr>
+<td><code>protected</code></td>
+<td>protected</td>
+<td>protected</td>
+<td>private</td>
+</tr>
+<tr>
+<td><code>private</code></td>
+<td>напрямую недоступен</td>
+<td>напрямую недоступен</td>
+<td>напрямую недоступен</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Важно:</strong> <code>private</code>-члены базы <strong>существуют</strong> внутри базового подобъекта наследника, но недоступны напрямую из кода наследника. При <code>class Derived : Base</code> наследование по умолчанию <code>private</code>; при <code>struct Derived : Base</code> — <code>public</code>.</p>
+</div></details><details class="topic"  id="83-порядок-конструирования-и-разрушения"><summary><span>8.3. Порядок конструирования и разрушения</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">struct Base { Base(){std::cout&lt;&lt;&quot;B &quot;;} ~Base(){std::cout&lt;&lt;&quot;~B &quot;;} };
+struct Member { Member(){std::cout&lt;&lt;&quot;M &quot;;} ~Member(){std::cout&lt;&lt;&quot;~M &quot;;} };
+struct Derived : Base {
+    Member m;
+    Derived(){std::cout&lt;&lt;&quot;D &quot;;}
+    ~Derived(){std::cout&lt;&lt;&quot;~D &quot;;}
+};
+// Для { Derived d; }:
+// B M D ~D ~M ~B
+</code></pre>
+<p>База полностью конструируется до членов и тела конструктора наследника. При разрушении сначала выполняется тело деструктора наследника, затем уничтожаются его поля, затем базы. Порядок членов — <strong>по объявлению</strong>, порядок прямых баз — <strong>по списку наследования</strong>.</p>
+</div></details><details class="topic"  id="84-наследование-конструкторов"><summary><span>8.4. Наследование конструкторов</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">struct Base {
+    explicit Base(int) {}
+    Base(int, double) {}
+};
+struct Derived : Base {
+    using Base::Base; // наследовать доступные конструкторы
+    int extra = 5;
+};
+Derived d(1); // Base(int), extra == 5
+</code></pre>
+<p><code>using Base::Base</code> делает конструкторы базы доступными для конструирования производного класса, но <strong>не наследует</strong> copy/move-конструкторы как обычные конструкторы и не заменяет инициализацию полей наследника. Если полю не задан default member initializer, оно может остаться неинициализированным.</p>
+</div></details><details class="topic"  id="85-сокрытие-имён-name-hiding"><summary><span>8.5. Сокрытие имён (name hiding)</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">struct Base {
+    void f(int) { std::cout &lt;&lt; &quot;int&quot;; }
+    void f(double) { std::cout &lt;&lt; &quot;double&quot;; }
+};
+struct Derived : Base {
+    void f(int) { std::cout &lt;&lt; &quot;derived int&quot;; }
+};
+Derived d;
+d.f(3.14);       // &quot;derived int&quot;: Base::f(double) скрыт!
+d.Base::f(3.14); // &quot;double&quot;
+</code></pre>
+<p>Любое объявление <code>f</code> в наследнике может скрыть набор одноимённых перегрузок базы. Чтобы добавить перегрузку и сохранить базовые, используйте <code>using Base::f;</code> внутри класса. <strong>Сокрытие имени</strong> — не то же самое, что <strong>переопределение виртуальной функции</strong>.</p>
+</div></details><details class="topic"  id="86-срезка-объектов-object-slicing"><summary><span>8.6. Срезка объектов (object slicing)</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">struct Base { int x = 1; virtual ~Base() = default; };
+struct Derived : Base { int y = 2; };
+Derived d;
+Base b = d;      // копируется только Base-подобъект
+Base&amp; r = d;     // срезки нет
+Base* p = &amp;d;    // срезки нет
+</code></pre>
+<p>Объект <code>Derived d</code> содержит базовый подобъект <code>Base</code> и собственные поля <code>Derived</code>. При <code>Base b = d</code> создаётся отдельный объект <code>Base</code>: копируется базовая часть, а поля производной части в <code>b</code> отсутствуют.</p>
+<p>Срезка возникает при <strong>копировании производного объекта по значению в базовый тип</strong>, в том числе при передаче <code>void f(Base)</code> и хранении <code>std::vector&lt;Base&gt;</code>. Виртуальность методов не отменяет срезку: после копирования <code>b</code> — самостоятельный объект <code>Base</code>. Чтобы сохранить полиморфное поведение, передавайте <code>Base&amp;</code>, <code>Base*</code> или храните <code>std::unique_ptr&lt;Base&gt;</code> (при корректном виртуальном деструкторе).</p>
+</div></details><details class="topic"  id="87-приватное-наследование-vs-композиция"><summary><span>8.7. Приватное наследование vs композиция</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<p><code>class Stack : private std::vector&lt;int&gt;</code> означает «реализован через» с использованием базового подобъекта, но <strong>не публичное is-a</strong>. <code>class Stack { std::vector&lt;int&gt; data_; }</code> выражает <strong>has-a</strong>. Композиция обычно предпочтительна: меньше связанность, проще менять реализацию и управлять инвариантами. Приватное наследование может иметь смысл для доступа к <code>protected</code>, специальных возможностей переопределения или оптимизации пустого базового класса, но не является универсальной заменой композиции.</p>
+</div></details><details class="topic"  id="88-final-и-принцип-подстановки"><summary><span>8.8. final и принцип подстановки</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">struct Base {
+    virtual ~Base() = default;
+    virtual void run() final {}
+    virtual void save() {}
+};
+struct Derived final : Base {
+    void save() override {}
+    // void run() override {} // ошибка: final
+};
+// struct More : Derived {}; // ошибка: класс final
+</code></pre>
+<p><code>final</code> на классе запрещает дальнейшее наследование; на виртуальном методе — дальнейшее переопределение. <code>override</code> проверяет, что метод действительно переопределяет виртуальный метод базы. <strong>Принцип Лисков (LSP):</strong> объект наследника должен использоваться вместо базы без нарушения обещанного поведения. Не всякое внешне похожее отношение является корректным наследованием.</p>
+</div></details><details class="topic"  id="89-множественное-наследование"><summary><span>8.9. Множественное наследование</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">struct Printer { void status() {} };
+struct Scanner { void status() {} };
+struct Copier : Printer, Scanner {};
+Copier c;
+// c.status();          // неоднозначно
+c.Printer::status();   // явно выбираем базу
+</code></pre>
+<p>При множественном наследовании объект содержит подобъекты нескольких прямых баз. Адрес <code>Printer*</code> и <code>Scanner*</code>, полученный из <code>Copier*</code>, <strong>может различаться</strong>: корректное преобразование указателя на базу учитывает смещение подобъекта. <code>reinterpret_cast</code> не заменяет корректное приведение к базе.</p>
+</div></details><details class="topic"  id="810-проблема-ромба"><summary><span>8.10. Проблема ромба</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<p>В обычном ромбе <code>Printer</code> и <code>Scanner</code> наследуют <code>Device</code>, а <code>Copier</code> наследует оба класса. В <code>Copier</code> находятся два подобъекта <code>Device</code>, по одному через каждую ветвь. Виртуальное наследование <code>Device</code> обеими ветвями позволяет иметь один общий подобъект.</p>
+<pre><code class="language-cpp">struct Device { int id = 0; };
+struct Printer : Device {};
+struct Scanner : Device {};
+struct Copier : Printer, Scanner {};
+Copier c;
+// c.id = 1; // неоднозначно: ДВА Device-подобъекта
+c.Printer::id = 1;
+c.Scanner::id = 2;
+</code></pre>
+<p>Без виртуального наследования <code>Copier</code> содержит <strong>две отдельные копии</strong> <code>Device</code>, каждая со своим <code>id</code>. Квалификация имени выбирает одну ветку, но не устраняет дублирование состояния.</p>
+</div></details><details class="topic"  id="811-виртуальное-наследование"><summary><span>8.11. Виртуальное наследование</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">struct Device { explicit Device(int id) : id(id) {} int id; };
+struct Printer : virtual Device { Printer() : Device(1) {} };
+struct Scanner : virtual Device { Scanner() : Device(2) {} };
+struct Copier : Printer, Scanner {
+    Copier() : Device(42), Printer(), Scanner() {}
+};
+Copier c;
+// c.id == 42: общий Device-подобъект ровно один
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Схема наследования</th>
+<th>Число подобъектов <code>Device</code> в <code>Copier</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Printer : Device</code>, <code>Scanner : Device</code></td>
+<td>Два отдельных подобъекта</td>
+</tr>
+<tr>
+<td><code>Printer : virtual Device</code>, <code>Scanner : virtual Device</code></td>
+<td>Один общий подобъект</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ключевой нюанс:</strong> виртуальную базу инициализирует <strong>наиболее производный класс</strong> (<code>Copier</code>), а инициализаторы <code>Device(...)</code> в промежуточных конструкторах игнорируются, когда эти классы являются подобъектами <code>Copier</code>. Виртуальные базы конструируются до невиртуальных баз; детали расположения служебных указателей/таблиц (<code>vbptr</code>, <code>vptr</code>) — <strong>детали ABI</strong>, а не обязательная модель памяти стандарта C++.</p>
+</div></details><details class="topic"  id="812-примеси-интерфейсы-и-альтернативы"><summary><span>8.12. Примеси, интерфейсы и альтернативы</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<p><strong>Mixin</strong> добавляет типу небольшую возможность через наследование (например, CRTP-шаблон). <strong>Интерфейс</strong> в C++ часто задаётся абстрактным классом с чисто виртуальными методами:</p>
+<pre><code class="language-cpp">struct Drawable {
+    virtual void draw() const = 0;
+    virtual ~Drawable() = default;
+};
+struct Circle : Drawable {
+    void draw() const override { std::cout &lt;&lt; &quot;circle&quot;; }
+};
+</code></pre>
+<p>Чисто виртуальный метод (<code>= 0</code>) делает класс абстрактным, если в наиболее производном классе остаётся непереопределённым. В интерфейсах нужен <strong>виртуальный деструктор</strong>, если объекты могут удаляться через указатель на базу. Альтернативы наследованию: композиция, шаблоны, концепты C++20, <code>std::variant</code> и свободные функции. <strong>Важное разграничение:</strong> <code>virtual</code>-методы и динамический полиморфизм подробно развиваются в следующих темах курса; здесь они введены ровно настолько, насколько нужны для понимания наследования, срезки и интерфейсов.</p>
+<hr />
+</div></details><details class="topic"  id="813-практика-виртуальная-функция-и-аргумент-по-умолчанию"><summary><span>8.13. Практика: виртуальная функция и аргумент по умолчанию</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<p><img alt="Выбор метода через базовый тип" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAwIiBoZWlnaHQ9IjQzNyIgdmlld0JveD0iMCAwIDEwMDAgNDM3IiByb2xlPSJpbWciIGFyaWEtbGFiZWw9ItCa0LDQuiDRgNCw0LfQvtCx0YDQsNGC0Ywg0LLRi9C30L7QsiDQvNC10YLQvtC00LAg0YfQtdGA0LXQtyBCYXNlJmFtcDsiPjxyZWN0IHdpZHRoPSIxMDAwIiBoZWlnaHQ9IjQzNyIgcng9IjIwIiBmaWxsPSIjZjFmNWY5Ii8+PHRleHQgeD0iMzQiIHk9IjQ4IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMwZjE3MmEiPtCa0LDQuiDRgNCw0LfQvtCx0YDQsNGC0Ywg0LLRi9C30L7QsiDQvNC10YLQvtC00LAg0YfQtdGA0LXQtyBCYXNlJmFtcDs8L3RleHQ+PHJlY3QgeD0iMjgiIHk9Ijc2IiB3aWR0aD0iOTQ0IiBoZWlnaHQ9IjY2IiByeD0iMTAiIGZpbGw9IndoaXRlIiBzdHJva2U9IiNjYmQ1ZTEiLz48cmVjdCB4PSIyOCIgeT0iNzYiIHdpZHRoPSI3IiBoZWlnaHQ9IjY2IiByeD0iMyIgZmlsbD0iIzAyODRjNyIvPjx0ZXh0IHg9IjQ4IiB5PSIxMDMiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE5IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iIzA3NTk4NSI+MS4g0KHRgtCw0YLQuNGH0LXRgdC60LjQuSDRgtC40L8g0LLRi9GA0LDQttC10L3QuNGPPC90ZXh0Pjx0ZXh0IHg9IjQ4IiB5PSIxMjciIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE3IiBmaWxsPSIjMzM0MTU1Ij7QntC/0YDQtdC00LXQu9GP0LXRgiDQv9C+0LjRgdC6INC40LzQtdC90LgsINC00L7RgdGC0YPQvywg0L/QtdGA0LXQs9GA0YPQt9C60YMg0Lgg0LDRgNCz0YPQvNC10L3RgtGLINC/0L4g0YPQvNC+0LvRh9Cw0L3QuNGOLjwvdGV4dD48cmVjdCB4PSIyOCIgeT0iMTU5IiB3aWR0aD0iOTQ0IiBoZWlnaHQ9IjY2IiByeD0iMTAiIGZpbGw9IndoaXRlIiBzdHJva2U9IiNjYmQ1ZTEiLz48cmVjdCB4PSIyOCIgeT0iMTU5IiB3aWR0aD0iNyIgaGVpZ2h0PSI2NiIgcng9IjMiIGZpbGw9IiMwMjg0YzciLz48dGV4dCB4PSI0OCIgeT0iMTg2IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMwNzU5ODUiPjIuINCc0LXRgtC+0LQg0L3QtdCy0LjRgNGC0YPQsNC70YzQvdGL0Lk8L3RleHQ+PHRleHQgeD0iNDgiIHk9IjIxMCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTciIGZpbGw9IiMzMzQxNTUiPtCS0YvQt9GL0LLQsNC10YLRgdGPINGA0LXQsNC70LjQt9Cw0YbQuNGPLCDQstGL0LHRgNCw0L3QvdCw0Y8g0L/QviDRgdGC0LDRgtC40YfQtdGB0LrQvtC80YMg0YLQuNC/0YMuPC90ZXh0PjxyZWN0IHg9IjI4IiB5PSIyNDIiIHdpZHRoPSI5NDQiIGhlaWdodD0iNjYiIHJ4PSIxMCIgZmlsbD0id2hpdGUiIHN0cm9rZT0iI2NiZDVlMSIvPjxyZWN0IHg9IjI4IiB5PSIyNDIiIHdpZHRoPSI3IiBoZWlnaHQ9IjY2IiByeD0iMyIgZmlsbD0iIzAyODRjNyIvPjx0ZXh0IHg9IjQ4IiB5PSIyNjkiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE5IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iIzA3NTk4NSI+My4g0JzQtdGC0L7QtCDQstC40YDRgtGD0LDQu9GM0L3Ri9C5PC90ZXh0Pjx0ZXh0IHg9IjQ4IiB5PSIyOTMiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE3IiBmaWxsPSIjMzM0MTU1Ij7QktGL0LfRi9Cy0LDQtdGC0YHRjyDQutC+0L3QtdGH0L3QvtC1INC/0LXRgNC10L7Qv9GA0LXQtNC10LvQtdC90LjQtSDQtNC70Y8g0LTQuNC90LDQvNC40YfQtdGB0LrQvtCz0L4g0YLQuNC/0LAg0L7QsdGK0LXQutGC0LAuPC90ZXh0PjxyZWN0IHg9IjI4IiB5PSIzMjUiIHdpZHRoPSI5NDQiIGhlaWdodD0iNjYiIHJ4PSIxMCIgZmlsbD0id2hpdGUiIHN0cm9rZT0iI2NiZDVlMSIvPjxyZWN0IHg9IjI4IiB5PSIzMjUiIHdpZHRoPSI3IiBoZWlnaHQ9IjY2IiByeD0iMyIgZmlsbD0iIzAyODRjNyIvPjx0ZXh0IHg9IjQ4IiB5PSIzNTIiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE5IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iIzA3NTk4NSI+NC4g0JjRgdC60LvRjtGH0LXQvdC40Y8g0LTQu9GPINGA0LDQt9Cx0L7RgNCwPC90ZXh0Pjx0ZXh0IHg9IjQ4IiB5PSIzNzYiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE3IiBmaWxsPSIjMzM0MTU1Ij5CYXNlOjpmKCkg0L/QvtC00LDQstC70Y/QtdGCINCy0LjRgNGC0YPQsNC70YzQvdC+0YHRgtGMOyDQsiBjdG9yL2R0b3Ig0LTQtdC50YHRgtCy0YPQtdGCINGC0LXQutGD0YnQuNC5INC60LvQsNGB0YEuPC90ZXh0Pjwvc3ZnPg==" /></p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+struct Base {
+    virtual void print(int n = 1) const { std::cout &lt;&lt; &quot;B&quot; &lt;&lt; n; }
+    virtual ~Base() = default;
+};
+struct Derived : Base {
+    void print(int n = 2) const override { std::cout &lt;&lt; &quot;D&quot; &lt;&lt; n; }
+};
+int main() {
+    Derived d;
+    const Base&amp; b = d;
+    b.print();         // D1: тело по динамическому типу, аргумент по статическому
+    d.print();         // D2
+    d.Base::print();   // B1: явная квалификация подавляет виртуальный вызов
+}
+</code></pre>
+<p><strong>Вывод:</strong> <code>D1D2B1</code>. <code>override</code> требует совпадения нужных характеристик функции: отсутствие <code>const</code> у метода наследника здесь приведёт к ошибке компиляции. Обычный конструктор не бывает виртуальным; деструктор может быть виртуальным.</p>
+</div></details><details class="topic"  id="814-самопроверка-по-ооп-и-особенностям-c"><summary><span>8.14. Самопроверка по ООП и особенностям C++</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<ol>
+<li>Почему <code>T x = other;</code> вызывает конструктор, а <code>x = other;</code> — присваивание?</li>
+<li>Почему <code>T(T&amp;&amp; other) : field(other.field) {}</code> может копировать поле? Исправление: <code>field(std::move(other.field))</code>; имя <code>other</code> — lvalue.</li>
+<li>Что произойдёт при <code>delete basePtr</code>, если он указывает на <code>Derived</code>, а деструктор базы невиртуален? Для обычного удаления такого объекта — UB.</li>
+<li>Почему <code>private</code> не означает «поля базы отсутствуют в наследнике»? Они входят в базовый подобъект, но прямой доступ ограничен.</li>
+<li>Чем <code>virtual Base</code> отличается от <code>virtual void f()</code>? Первое управляет общим базовым подобъектом, второе — выбором реализации при вызове.</li>
+<li>Почему нельзя вернуть ссылку на локальный результат <code>operator+</code>? Объект разрушится при выходе, ссылка станет висячей; возвращайте значение.</li>
+</ol>
+<p>Дополнительная практика с виртуальными вызовами расширяет вводный материал лекции 8; это не утверждение о точном содержании контрольной.</p>
+<hr />
+</div></details></section><section class="lesson" id="extra-10" data-lecture="0"><h1 id="сводные-таблицы-ловушки-и-алгоритм-разбора-кода">Сводные таблицы, ловушки и алгоритм разбора кода</h1>
+<details class="topic"  id="91-что-запомнить-наизусть"><summary><span>9.1. Что запомнить наизусть</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<table>
+<thead>
+<tr>
+<th>Ситуация</th>
+<th>Правило</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>new T</code></td>
+<td>освобождается <code>delete</code></td>
+</tr>
+<tr>
+<td><code>new T[n]</code></td>
+<td>освобождается <code>delete[]</code></td>
+</tr>
+<tr>
+<td><code>int&amp;</code></td>
+<td>связывается с подходящим изменяемым lvalue</td>
+</tr>
+<tr>
+<td><code>const int&amp;</code></td>
+<td>может связываться с lvalue и временным</td>
+</tr>
+<tr>
+<td><code>int&amp;&amp;</code></td>
+<td>связывается с подходящим rvalue</td>
+</tr>
+<tr>
+<td><code>std::move(x)</code></td>
+<td>создаёт xvalue-выражение, не перемещает сам</td>
+</tr>
+<tr>
+<td><code>++x</code></td>
+<td>обычно возвращает изменённый объект</td>
+</tr>
+<tr>
+<td><code>x++</code></td>
+<td>возвращает прежнее значение</td>
+</tr>
+<tr>
+<td><code>const T*</code></td>
+<td>нельзя менять <code>T</code> через указатель</td>
+</tr>
+<tr>
+<td><code>T* const</code></td>
+<td>нельзя перенаправлять указатель</td>
+</tr>
+<tr>
+<td><code>T f() const</code></td>
+<td>метод не меняет обычные поля объекта</td>
+</tr>
+<tr>
+<td><code>T&amp; operator+=(...)</code></td>
+<td>изменяет левый операнд, возвращает <code>*this</code></td>
+</tr>
+<tr>
+<td><code>T operator+(...)</code></td>
+<td>возвращает новый объект</td>
+</tr>
+<tr>
+<td><code>operator&lt;&lt;(ostream&amp;, const T&amp;)</code></td>
+<td>свободная функция, возвращает поток</td>
+</tr>
+<tr>
+<td><code>class D : public B</code></td>
+<td>публичная связь is-a</td>
+</tr>
+<tr>
+<td><code>Base b = derived</code></td>
+<td>срезка</td>
+</tr>
+<tr>
+<td><code>Base&amp; b = derived</code></td>
+<td>без срезки</td>
+</tr>
+<tr>
+<td><code>using Base::f</code></td>
+<td>возвращает скрытые перегрузки в набор поиска</td>
+</tr>
+<tr>
+<td><code>virtual Base</code></td>
+<td>общая виртуальная база в ромбе</td>
+</tr>
+<tr>
+<td><code>override</code></td>
+<td>проверяет переопределение виртуального метода</td>
+</tr>
+<tr>
+<td><code>final</code></td>
+<td>запрещает дальнейшее наследование/переопределение</td>
+</tr>
+</tbody>
+</table>
+</div></details><details class="topic"  id="92-пять-видов-ответа-на-вопрос-что-выведет-код"><summary><span>9.2. Пять видов ответа на вопрос «что выведет код?»</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<ol>
+<li><strong>Компилируется, результат определён:</strong> можно назвать точный вывод.</li>
+<li><strong>Ошибка компиляции:</strong> нет исполняемого файла; объясните причину (например, <code>private</code>, ambiguous overload, narrowing).</li>
+<li><strong>Ошибка компоновки:</strong> объявление есть, определения нет, либо конфликт определений.</li>
+<li><strong>UB:</strong> стандарт не определяет поведение; нельзя обещать конкретный вывод.</li>
+<li><strong>Unspecified / implementation-defined:</strong> программа может иметь несколько разрешённых вариантов или зависеть от реализации; не путайте с UB.</li>
+</ol>
+</div></details><details class="topic"  id="93-алгоритм-решения-задачи-по-коду"><summary><span>9.3. Алгоритм решения задачи по коду</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<ol>
+<li>Проверить синтаксис, типы, доступ и перегрузки: иначе ошибка компиляции.</li>
+<li>Проверить наличие определений: возможна ошибка компоновки.</li>
+<li>Проверить время жизни, границы и остальные причины UB. При UB точного вывода нет.</li>
+<li>Если поведение определено, разобрать вызовы, порядок действий и вычислить вывод.</li>
+</ol>
+<p><strong>Перед ответом проверяйте:</strong> (1) тип каждого выражения; (2) категорию значения; (3) <code>const</code> и доступ; (4) перегрузку; (5) время жизни; (6) копирование или перемещение; (7) порядок конструирования и уничтожения; (8) выход за границы/неинициализированные значения; (9) особенности C++20.</p>
+<hr />
+</div></details></section><section class="lesson" id="extra-11" data-lecture="0"><h1 id="тренировочная-контрольная-с-решениями">Тренировочная контрольная с решениями</h1>
+<blockquote>
+<p>Сначала решите без просмотра ответов. Для фрагментов подразумеваются нужные стандартные заголовки и <code>std::</code> там, где это очевидно; если не указано иначе, каждый пример рассматривается отдельно.</p>
+</blockquote>
+<details class="topic"  id="задача-1-целочисленное-деление"><summary><span>Задача 1. Целочисленное деление</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">int a = 7, b = 2;
+std::cout &lt;&lt; a / b &lt;&lt; ' ' &lt;&lt; a % b &lt;&lt; ' ' &lt;&lt; a / 2.0;
+</code></pre>
+<p><strong>Ответ:</strong> <code>3 1 3.5</code>. Первые две операции целочисленные; в третьей <code>a</code> преобразуется к <code>double</code>.</p>
+</div></details><details class="topic"  id="задача-2-префикс-и-постфикс"><summary><span>Задача 2. Префикс и постфикс</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">int x = 4;
+int y = x++;
+int z = ++x;
+std::cout &lt;&lt; x &lt;&lt; ' ' &lt;&lt; y &lt;&lt; ' ' &lt;&lt; z;
+</code></pre>
+<p><strong>Ответ:</strong> <code>6 4 6</code>. Постфикс сохраняет старое значение 4 и делает <code>x=5</code>; префикс делает <code>x=6</code> и возвращает 6.</p>
+</div></details><details class="topic"  id="задача-3-массив-и-указатель"><summary><span>Задача 3. Массив и указатель</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">int a[]{3, 6, 9};
+int* p = a;
+std::cout &lt;&lt; *(p + 1) &lt;&lt; ' ' &lt;&lt; (a + 3 - p);
+</code></pre>
+<p><strong>Ответ:</strong> <code>6 3</code>. <code>a+3</code> — допустимый one-past-end указатель; разность считается в элементах.</p>
+</div></details><details class="topic"  id="задача-4-const"><summary><span>Задача 4. const</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">int x = 1, y = 2;
+const int* p = &amp;x;
+p = &amp;y;
+// *p = 3;
+</code></pre>
+<p><strong>Ответ:</strong> без закомментированной строки компилируется. <code>p</code> перенаправляется; <code>*p=3</code> — ошибка компиляции из-за <code>const</code>.</p>
+</div></details><details class="topic"  id="задача-5-время-жизни"><summary><span>Задача 5. Время жизни</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">int* make() {
+    int x = 10;
+    return &amp;x;
+}
+int main() { std::cout &lt;&lt; *make(); }
+</code></pre>
+<p><strong>Ответ:</strong> обращение через висячий указатель, <strong>UB</strong>; нельзя утверждать, что будет напечатано <code>10</code>.</p>
+</div></details><details class="topic"  id="задача-6-перегрузка"><summary><span>Задача 6. Перегрузка</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">void f(int) { std::cout &lt;&lt; &quot;I&quot;; }
+void f(double) { std::cout &lt;&lt; &quot;D&quot;; }
+int main() { f(1); f(1.0); f('a'); }
+</code></pre>
+<p><strong>Ответ:</strong> <code>IDI</code>. <code>char</code> обычно продвигается к <code>int</code> (integral promotion), что лучше conversion к <code>double</code>.</p>
+</div></details><details class="topic"  id="задача-7-ссылка-против-копии"><summary><span>Задача 7. Ссылка против копии</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">void a(int x) { x += 2; }
+void b(int&amp; x) { x += 3; }
+int main() { int n=1; a(n); b(n); std::cout &lt;&lt; n; }
+</code></pre>
+<p><strong>Ответ:</strong> <code>4</code>. <code>a</code> меняет копию, <code>b</code> — исходный <code>n</code>.</p>
+</div></details><details class="topic"  id="задача-8-порядок-полей"><summary><span>Задача 8. Порядок полей</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">struct S {
+    int x = 2;
+    int y = x + 3;
+    S() : y(100), x(5) {}
+};
+int main() { S s; std::cout &lt;&lt; s.x &lt;&lt; ' ' &lt;&lt; s.y; }
+</code></pre>
+<p><strong>Ответ:</strong> <code>5 100</code>. Поля инициализируются в порядке <strong>объявления</strong>, но явный инициализатор <code>y(100)</code> перекрывает default member initializer <code>y = x+3</code>.</p>
+</div></details><details class="topic"  id="задача-9-деструкторы"><summary><span>Задача 9. Деструкторы</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">struct A { ~A(){std::cout &lt;&lt; &quot;A&quot;;} };
+struct B { ~B(){std::cout &lt;&lt; &quot;B&quot;;} };
+int main() { A a; B b; }
+</code></pre>
+<p><strong>Ответ:</strong> <code>BA</code>. Локальные объекты уничтожаются в обратном порядке конструирования.</p>
+</div></details><details class="topic"  id="задача-10-копирование-и-владение"><summary><span>Задача 10. Копирование и владение</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">struct Bad {
+    int* p = new int(5);
+    ~Bad() { delete p; }
+};
+int main() { Bad a; Bad b = a; }
+</code></pre>
+<p><strong>Ответ:</strong> копирование <code>Bad b=a</code> по умолчанию копирует адрес; при разрушении обоих объектов возникает <strong>double delete / UB</strong>. Исправление: <code>std::unique_ptr&lt;int&gt;</code> с запретом копирования, <code>std::vector&lt;int&gt;</code> или глубокое копирование с Rule of Five.</p>
+</div></details><details class="topic"  id="задача-11-перегрузка"><summary><span>Задача 11. Перегрузка <code>++</code></span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">struct C {
+    int x{};
+    C&amp; operator++() { ++x; return *this; }
+    C operator++(int) { C old=*this; ++*this; return old; }
+};
+int main() { C c{2}; C a=c++; C b=++c; std::cout &lt;&lt; a.x &lt;&lt; ' ' &lt;&lt; b.x &lt;&lt; ' ' &lt;&lt; c.x; }
+</code></pre>
+<p><strong>Ответ:</strong> <code>2 4 4</code>. После <code>c++</code>: <code>a=2</code>, <code>c=3</code>; после <code>++c</code>: <code>c=4</code>, <code>b</code> копирует 4.</p>
+</div></details><details class="topic"  id="задача-12-сокрытие-имён"><summary><span>Задача 12. Сокрытие имён</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">struct Base {
+    void f(int) { std::cout &lt;&lt; &quot;I&quot;; }
+    void f(double) { std::cout &lt;&lt; &quot;D&quot;; }
+};
+struct Derived : Base {
+    void f(int) { std::cout &lt;&lt; &quot;X&quot;; }
+};
+int main() { Derived d; d.f(2.5); }
+</code></pre>
+<p><strong>Ответ:</strong> <code>X</code>. Имя <code>f</code> в наследнике скрывает обе перегрузки базы; <code>double</code> преобразуется в <code>int</code>. Добавление <code>using Base::f;</code> сделает вывод <code>D</code>.</p>
+</div></details><details class="topic"  id="задача-13-срезка"><summary><span>Задача 13. Срезка</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">struct B { virtual ~B() = default; virtual int f() const { return 1; } };
+struct D : B { int f() const override { return 2; } };
+int byValue(B b) { return b.f(); }
+int byRef(const B&amp; b) { return b.f(); }
+int main() { D d; std::cout &lt;&lt; byValue(d) &lt;&lt; byRef(d); }
+</code></pre>
+<p><strong>Ответ:</strong> <code>12</code>. В <code>byValue</code> происходит срезка до <code>B</code>, в <code>byRef</code> динамический тип объекта остаётся <code>D</code> и виртуальный вызов выбирает <code>D::f</code>.</p>
+</div></details><details class="topic"  id="задача-14-ромб"><summary><span>Задача 14. Ромб</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">struct A { int x=1; };
+struct B : A {};
+struct C : A {};
+struct D : B, C {};
+int main() { D d; /* std::cout &lt;&lt; d.x; */ }
+</code></pre>
+<p><strong>Ответ:</strong> <code>d.x</code> неоднозначно — в <code>D</code> две копии <code>A</code>. Можно выбрать <code>d.B::x</code> или <code>d.C::x</code>; для единой общей базы используйте <code>struct B : virtual A</code> и <code>struct C : virtual A</code>.</p>
+</div></details><details class="topic"  id="задача-15-stdmove-и-категории"><summary><span>Задача 15. <code>std::move</code> и категории</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">void f(const std::string&amp;) { std::cout &lt;&lt; &quot;L&quot;; }
+void f(std::string&amp;&amp;) { std::cout &lt;&lt; &quot;R&quot;; }
+int main() {
+    std::string s = &quot;abc&quot;;
+    f(s);
+    f(std::move(s));
+}
+</code></pre>
+<p><strong>Ответ:</strong> <code>LR</code>. Именованное <code>s</code> — lvalue; <code>std::move(s)</code> — xvalue. Сам вызов <code>f(std::move(s))</code> ничего не перемещает: выбранная перегрузка лишь принимает ссылку.</p>
+</div></details><details class="topic"  id="задача-16-explicit"><summary><span>Задача 16. <code>explicit</code></span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">struct T { explicit T(int) {} };
+void f(T) {}
+int main() {
+    T a{3};
+    // T b = 3;
+    // f(3);
+    f(T{3});
+}
+</code></pre>
+<p><strong>Ответ:</strong> <code>T a{3}</code> и <code>f(T{3})</code> корректны; <code>T b = 3</code> и <code>f(3)</code> — ошибки из-за запрета неявного преобразования.</p>
+</div></details><details class="topic"  id="задача-17-operator"><summary><span>Задача 17. <code>operator&lt;=&gt;</code></span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">struct P {
+    int x, y;
+    auto operator&lt;=&gt;(const P&amp;) const = default;
+};
+int main() { P a{1,9}, b{2,0}; std::cout &lt;&lt; (a &lt; b); }
+</code></pre>
+<p><strong>Ответ:</strong> <code>1</code>. Сравнение лексикографическое: сначала <code>x</code>, а <code>1 &lt; 2</code>, поэтому <code>y</code> не определяет результат.</p>
+</div></details><details class="topic"  id="задача-18-виртуальная-база"><summary><span>Задача 18. Виртуальная база</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<pre><code class="language-cpp">struct A { int x; explicit A(int n) : x(n) {} };
+struct B : virtual A { B() : A(1) {} };
+struct C : virtual A { C() : A(2) {} };
+struct D : B, C { D() : A(7), B(), C() {} };
+int main() { D d; std::cout &lt;&lt; d.x; }
+</code></pre>
+<p><strong>Ответ:</strong> <code>7</code>. В наиболее производном объекте <code>D</code> виртуальную базу <code>A</code> инициализирует <code>D</code>, а не <code>B</code> или <code>C</code>.</p>
+</div></details><details class="topic"  id="задача-19-написать-класс-без-ручного-newdelete"><summary><span>Задача 19. Написать класс без ручного new/delete</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<p><strong>Условие:</strong> реализовать класс <code>Scores</code>, который хранит оценки, добавляет оценку, возвращает среднее, запрещает оценки вне диапазона 0–100.</p>
+<pre><code class="language-cpp">#include &lt;vector&gt;
+#include &lt;stdexcept&gt;
+class Scores {
+    std::vector&lt;int&gt; values_;
+public:
+    void add(int x) {
+        if (x &lt; 0 || x &gt; 100) throw std::out_of_range(&quot;score&quot;);
+        values_.push_back(x);
+    }
+    double average() const {
+        if (values_.empty()) return 0.0;
+        long long sum = 0;
+        for (int x : values_) sum += x;
+        return static_cast&lt;double&gt;(sum) / values_.size();
+    }
+};
+</code></pre>
+<p><strong>Разбор:</strong> <code>private</code> защищает инвариант; <code>add</code> проверяет данные; <code>average() const</code> не изменяет объект; <code>std::vector</code> автоматически управляет памятью; <code>static_cast&lt;double&gt;</code> не даёт целочисленному делению испортить среднее. При чрезвычайно большом числе оценок даже <code>long long</code> теоретически может переполниться — для заданных ограничений это нужно учитывать.</p>
+</div></details><details class="topic"  id="задача-20-написать-класс-с-каноническими-операторами"><summary><span>Задача 20. Написать класс с каноническими операторами</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<p><strong>Условие:</strong> реализовать двумерный целочисленный вектор с <code>+=</code>, <code>+</code>, <code>==</code>, <code>&lt;&lt;</code>.</p>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+struct Vector2 {
+    int x{}, y{};
+    Vector2&amp; operator+=(const Vector2&amp; rhs) {
+        x += rhs.x;
+        y += rhs.y;
+        return *this;
+    }
+    friend Vector2 operator+(Vector2 lhs, const Vector2&amp; rhs) {
+        lhs += rhs;
+        return lhs;
+    }
+    bool operator==(const Vector2&amp;) const = default;
+    friend std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, const Vector2&amp; v) {
+        return os &lt;&lt; '(' &lt;&lt; v.x &lt;&lt; ',' &lt;&lt; v.y &lt;&lt; ')';
+    }
+};
+</code></pre>
+<p><strong>Разбор:</strong> <code>+=</code> меняет объект; <code>+</code> использует копию <code>lhs</code>; <code>==</code> C++20 сравнивает поля; потоковый оператор свободный и возвращает <code>ostream&amp;</code>. Для <code>int</code> арифметика может переполниться — это отдельное ограничение типа.</p>
+<hr />
+</div></details></section><section class="lesson" id="extra-12" data-lecture="0"><h1 id="последний-чек-лист-перед-контрольной">Последний чек-лист перед контрольной</h1>
+<ul>
+<li>[ ] Могу написать <code>main</code>, скомпилировать C++20 и объяснить этапы трансляции.</li>
+<li>[ ] Различаю объявление, определение, ODR, ошибку компиляции, линковки и UB.</li>
+<li>[ ] Понимаю инициализацию <code>{}</code>, <code>=</code>, <code>()</code>, <code>const</code>, <code>constexpr</code>, <code>auto</code>.</li>
+<li>[ ] Умею вычислять арифметику, битовые маски, инкременты и short-circuit.</li>
+<li>[ ] Умею объяснить <code>cin</code>, <code>getline</code>, <code>if</code>, <code>switch</code>, <code>for</code>, <code>while</code>, <code>break</code>, <code>continue</code>.</li>
+<li>[ ] Рисую память: объект, указатель, ссылка, массив, динамическое выделение.</li>
+<li>[ ] Отличаю <code>const T*</code> от <code>T* const</code>, <code>new</code> от <code>new[]</code>.</li>
+<li>[ ] Знаю причины утечек, dangling, double delete, use-after-free.</li>
+<li>[ ] Отличаю lvalue/prvalue/xvalue и понимаю, что делает <code>std::move</code>.</li>
+<li>[ ] Умею предсказать выбор перегруженной функции и эффект аргументов по умолчанию.</li>
+<li>[ ] Различаю <code>inline</code>, <code>constexpr</code>, <code>consteval</code>, RVO и NRVO.</li>
+<li>[ ] Пишу классы с инвариантами, <code>const</code>-методами, <code>static</code>, <code>friend</code>.</li>
+<li>[ ] Знаю порядок конструирования/уничтожения и смысл MIL.</li>
+<li>[ ] Понимаю RAII, Rule of Three/Five/Zero и глубокое копирование.</li>
+<li>[ ] Пишу <code>+=</code>, <code>+</code>, <code>++</code>, <code>[]</code>, <code>()</code>, <code>&lt;&lt;</code>, <code>==</code>, <code>&lt;=&gt;</code>.</li>
+<li>[ ] Объясняю <code>public/protected/private</code>-наследование, срезку, name hiding.</li>
+<li>[ ] Могу нарисовать ромб с двумя базами и виртуальный ромб с одной базой.</li>
+<li>[ ] Различаю наследование <code>is-a</code> и композицию <code>has-a</code>.</li>
+</ul>
+<details class="topic"  id="источники-и-соответствие-презентациям"><summary><span>Источники и соответствие презентациям</span><b aria-hidden="true">+</b></summary><div class="topic-body">
+<table>
+<thead>
+<tr>
+<th>Лекция</th>
+<th>Загруженный материал</th>
+<th>Что охвачено</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>lecture_01_introduction_presentation.pdf</code></td>
+<td>история, стандарты, <code>main</code>, компиляция, ODR, make/CMake, Google Test, отладка, типы, инициализация, namespace</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>lecture_02_operators_io_presentation.pdf</code></td>
+<td>арифметика, биты, логика, приоритет, составные операторы, numeric_limits, cmath, I/O, ветвления, циклы, приведения</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>lecture_03_pointers_references_presentation.pdf</code></td>
+<td>память, адреса, массивы, const, nullptr, new/delete, ошибки, санитайзеры, ссылки, категории значений, cast</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>lecture_04_functions_presentation.pdf</code></td>
+<td>объявления, параметры, перегрузка, разрешение, default args, inline/constexpr, RVO/NRVO, указатели на функции, рекурсия, ADL</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>lecture_05_classes_presentation.pdf</code></td>
+<td>struct/class, поля, доступ, this, const/mutable, static, friend, вложенные типы, padding, PIMPL</td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>lecture_06_constructors_raii_presentation.pdf</code></td>
+<td>конструкторы, MIL, делегирование, explicit, default/delete, деструкторы, RAII, lifetime, copy/move, Rule of Five</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>lecture_07_operators_presentation.pdf</code></td>
+<td>методы и свободные операторы, арифметика, ++/--, <code>&lt;=&gt;</code>, потоки, <code>[]</code>, функторы, <code>-&gt;</code>, преобразования, литералы</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>lecture_08_inheritance_presentation.pdf</code></td>
+<td>is-a, доступ, порядок конструирования, наследование конструкторов, hiding, slicing, композиция, final, MI, ромб, virtual inheritance, интерфейсы</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Дополнение к презентациям:</strong> там, где формулировки на слайдах упрощены (например, «имя массива — указатель», «всё именованное — lvalue», гарантии <code>std::move</code>, <code>const</code>, особенности сдвигов и сравнения <code>double</code>), в конспекте приведены более точные правила C++20. SVG-иллюстрации созданы специально для этого конспекта. SVG-рисунки хранятся в папке <code>assets</code> и подключены обычными Markdown-ссылками на изображения.</p></div></details></section></div><p class="empty" id="no-results" hidden>Ничего не найдено. Попробуй другое слово или выбери все лекции.</p><section id="training" hidden><p class="mode-desc" id="mode-description"></p><div id="study" aria-live="polite"></div></section></main></div>
+<footer class="page-footer">Основа: восемь презентаций из docs. Стандарт C++20. Интерфейс вдохновлён <a href="https://socium.fun/ya#go" target="_blank" rel="noopener">Socium</a>: темы, самостоятельное решение, разбор и повторение. Прогресс хранится в этом браузере, если локальное хранилище доступно.<br><button class="pill" id="reset" style="margin-top:14px">Сбросить учебный прогресс</button></footer></div>
+<script>
+'use strict';
+const CARDS=[{"id": "c1", "lecture": 1, "q": "Чем int a = 5 отличается от a = 5?", "a": "В первом случае создаётся объект и выполняется инициализация; во втором изменяется уже существующий объект."}, {"id": "c2", "lecture": 1, "q": "Что произойдёт при чтении локального int x; до присваивания?", "a": "Для такого int в C++20 чтение неопределённого значения приводит к UB. Само объявление допустимо."}, {"id": "c3", "lecture": 1, "q": "Чем отличаются int x{} и int x; внутри функции?", "a": "Первый получает 0. У второго, если он автоматический, значение не задано."}, {"id": "c4", "lecture": 1, "q": "Почему int x{3.14} не компилируется?", "a": "List-initialization запрещает сужающее преобразование double в int."}, {"id": "c5", "lecture": 1, "q": "Что создают vector<int> a(3, 7) и b{3, 7}?", "a": "a содержит три семёрки; b содержит два элемента 3 и 7. У b выбран initializer_list-конструктор."}, {"id": "c6", "lecture": 1, "q": "T object(); создаёт объект?", "a": "Нет, это объявление функции object, возвращающей T. Для объекта без аргументов используйте T object{};."}, {"id": "c7", "lecture": 1, "q": "Зачем нужен explicit у конструктора?", "a": "Он ограничивает неявные преобразования. T x{5} может использовать explicit-конструктор, T x = 5 — нет."}, {"id": "c8", "lecture": 1, "q": "У любого класса T x{} все поля нулевые?", "a": "Нет. Например, пользовательский конструктор T() {} может оставить int-поле без инициализации."}, {"id": "c9", "lecture": 1, "q": "Каковы типы auto x{1} и auto y = {1}?", "a": "x имеет тип int; y — std::initializer_list<int>."}, {"id": "c10", "lecture": 1, "q": "Почему const не означает compile-time?", "a": "const int x = read(); допустим: значение может определяться при выполнении. constexpr-переменная требует константного выражения."}, {"id": "c11", "lecture": 1, "q": "Point { int x; int y=9; }; Point p{}; — значения?", "a": "x равен 0, y равен 9: для y действует инициализатор поля, для x — инициализация из пустого списка."}, {"id": "c12", "lecture": 1, "q": "Чем ошибка компиляции отличается от ошибки линковки?", "a": "Компилятор проверяет единицу трансляции и типы; компоновщик связывает определения из объектных файлов и библиотек."}, {"id": "c13", "lecture": 2, "q": "Что дают 7 / 2 и 7 / 2.0?", "a": "3 и 3.5: в первом выражении целочисленное деление."}, {"id": "c14", "lecture": 2, "q": "Чем отличается signed overflow от unsigned overflow?", "a": "Переполнение знакового целого — UB, беззнаковая арифметика выполняется по модулю 2^N."}, {"id": "c15", "lecture": 2, "q": "Что гарантирует встроенный &&?", "a": "Левый операнд вычисляется первым; правый — только если левый истинный."}, {"id": "c16", "lecture": 2, "q": "Приоритет задаёт порядок вычисления операндов?", "a": "Нет. Он определяет группировку; порядок вычисления нужно смотреть по правилам конкретного оператора."}, {"id": "c17", "lecture": 3, "q": "Чем const T* отличается от T* const?", "a": "const T* запрещает менять T через этот указатель. T* const запрещает перенаправлять сам указатель."}, {"id": "c18", "lecture": 3, "q": "Что такое dangling pointer?", "a": "Указатель на объект, время жизни которого закончилось; обращаться через него к такому объекту нельзя."}, {"id": "c19", "lecture": 3, "q": "Что делает std::move?", "a": "Преобразует выражение к xvalue. Само по себе не переносит ресурс."}, {"id": "c20", "lecture": 3, "q": "Именованная переменная T&& — lvalue или rvalue?", "a": "Выражение с её именем — lvalue. Для передачи как xvalue используют std::move."}, {"id": "c21", "lecture": 4, "q": "Когда нужен T&, а когда const T&?", "a": "T& — для изменения исходного объекта, const T& — для чтения без обязательного копирования."}, {"id": "c22", "lecture": 4, "q": "Можно ли перегрузить функцию только по возвращаемому типу?", "a": "Нет, различия только в возвращаемом типе недостаточно."}, {"id": "c23", "lecture": 4, "q": "Гарантировано ли NRVO в C++20?", "a": "Нет. Для подходящего prvalue есть гарантированная copy elision, но NRVO именованной локальной переменной необязательно."}, {"id": "c24", "lecture": 4, "q": "Почему return std::move(local) часто не нужен?", "a": "Он может помешать NRVO; возврат подходящего локального объекта и так допускает перемещение."}, {"id": "c25", "lecture": 5, "q": "Чем class отличается от struct?", "a": "Доступ к членам и наследование по умолчанию: private у class, public у struct."}, {"id": "c26", "lecture": 5, "q": "Что такое инвариант класса?", "a": "Условие корректного состояния объекта, которое поддерживают конструкторы и публичные операции."}, {"id": "c27", "lecture": 5, "q": "Что означает const после метода?", "a": "Метод работает с const-квалифицированным объектом: нельзя менять обычные поля; mutable — исключение."}, {"id": "c28", "lecture": 5, "q": "friend — это метод класса?", "a": "Нет. Дружественная свободная функция получает доступ к закрытым членам, но не становится методом."}, {"id": "c29", "lecture": 6, "q": "В каком порядке инициализируются поля?", "a": "В порядке объявления в классе, независимо от порядка списка инициализации."}, {"id": "c30", "lecture": 6, "q": "Что означает Rule of Zero?", "a": "Ресурсы принадлежат RAII-полям; свои деструктор и copy/move обычно не нужны."}, {"id": "c31", "lecture": 6, "q": "Вызывается ли деструктор объекта, если его конструктор бросил исключение?", "a": "Нет. Но уже полностью созданные поля и базы уничтожаются."}, {"id": "c32", "lecture": 6, "q": "Почему std::move(constObj) часто копирует?", "a": "Результат сохраняет const и обычно не подходит к T&&, но подходит к const T&."}, {"id": "c33", "lecture": 6, "q": "Что происходит с генерацией move при пользовательском деструкторе?", "a": "Неявные move-операции не объявляются. Даже объявление деструктора с = default влияет на это."}, {"id": "c34", "lecture": 7, "q": "Почему operator+= обычно возвращает T&?", "a": "Оператор меняет текущий объект и возвращает *this, позволяя цепочки."}, {"id": "c35", "lecture": 7, "q": "Почему operator+ возвращает значение?", "a": "Он создаёт результат, не изменяя исходные операнды; ссылка на локальный результат была бы висячей."}, {"id": "c36", "lecture": 7, "q": "Зачем int в постфиксном operator++(int)?", "a": "Это фиктивный параметр для отличия постфиксной формы от префиксной."}, {"id": "c37", "lecture": 7, "q": "Почему operator<< возвращает ostream&?", "a": "Чтобы продолжать цепочку вывода в тот же поток."}, {"id": "c38", "lecture": 8, "q": "Чем сокрытие отличается от переопределения?", "a": "Сокрытие влияет на поиск имени; переопределение заменяет виртуальную реализацию с подходящей сигнатурой."}, {"id": "c39", "lecture": 8, "q": "Что такое срезка?", "a": "При создании Base по значению из Derived копируется базовая часть; нового объекта Derived не возникает."}, {"id": "c40", "lecture": 8, "q": "Кто инициализирует виртуальную базу?", "a": "Наиболее производный класс."}, {"id": "c41", "lecture": 8, "q": "Зачем виртуальный деструктор базы?", "a": "Для обычного корректного удаления производного объекта через указатель на базу."}, {"id": "c42", "lecture": 8, "q": "Откуда берётся default-аргумент виртуального вызова?", "a": "Из объявления, выбранного по статическому типу. Тело виртуального метода выбирается по динамическому типу."}], QUESTIONS=[{"id": "q1", "lecture": 1, "q": "Какое значение у x?", "code": "int x{};", "options": ["0", "Неопределённое значение", "Ошибка компиляции"], "correct": 0, "why": "Пустой список для int приводит к value-initialization и нулевому значению."}, {"id": "q2", "lecture": 1, "q": "Что будет при выполнении в C++20?", "code": "int main() { int x; std::cout << x; }", "options": ["Всегда 0", "UB", "Ошибка компиляции"], "correct": 1, "why": "Неинициализированный автоматический int нельзя читать. Конкретный вывод не обещан."}, {"id": "q3", "lecture": 1, "q": "Компилируется ли эта строка?", "code": "int x{3.14};", "options": ["Да, x = 3", "Да, x = 4", "Нет"], "correct": 2, "why": "List-initialization запрещает narrowing double → int."}, {"id": "q4", "lecture": 1, "q": "Какие элементы в v?", "code": "std::vector<int> v{3, 7};", "options": ["7, 7, 7", "3, 7", "0, 0, 0"], "correct": 1, "why": "Непустой список выбирает здесь initializer_list-конструктор."}, {"id": "q5", "lecture": 1, "q": "Какие элементы в v?", "code": "std::vector<int> v(3, 7);", "options": ["3, 7", "7, 7, 7", "3, 3, 3, 3, 3, 3, 3"], "correct": 1, "why": "Скобки () выбирают конструктор «количество, значение»."}, {"id": "q6", "lecture": 1, "q": "Что объявлено?", "code": "std::string name();", "options": ["Пустая строка", "Функция, возвращающая string", "Указатель"], "correct": 1, "why": "Это объявление функции. Для объекта используйте std::string name{};."}, {"id": "q7", "lecture": 1, "q": "Какой тип у x?", "code": "auto x = {1};", "options": ["int", "std::initializer_list<int>", "int&"], "correct": 1, "why": "Copy-list-initialization с auto и таким списком выводит initializer_list<int>."}, {"id": "q8", "lecture": 1, "q": "Задано ли нулевое значение b.x?", "code": "struct B { int x; B() {} };\nB b{};", "options": ["Да, всегда", "Нет, поле не инициализировано", "Код не компилируется"], "correct": 1, "why": "Пользовательский B() не инициализирует x. Фигурные скобки не обнуляют любой класс."}, {"id": "q9", "lecture": 1, "q": "Компилируется ли создание a?", "code": "struct T { explicit T(int) {} };\nT a = {3};", "options": ["Да", "Нет"], "correct": 1, "why": "При copy-list-initialization выбор explicit-конструктора делает программу некорректной."}, {"id": "q10", "lecture": 1, "q": "Чему равны поля p?", "code": "struct P { int x; int y = 9; };\nP p{};", "options": ["0 и 0", "Не заданы", "0 и 9"], "correct": 2, "why": "x инициализируется из пустого списка, y получает свой default member initializer."}, {"id": "q11", "lecture": 2, "q": "Что выведет код?", "code": "int x=4; int y=x++; int z=++x;\nstd::cout << x << y << z;", "options": ["645", "646", "545"], "correct": 1, "why": "y получает 4, x становится 5; затем ++x даёт 6, z=6. Вывод без пробелов: 646."}, {"id": "q12", "lecture": 2, "q": "Чему равно выражение?", "code": "7 / 2", "options": ["3", "3.5", "4"], "correct": 0, "why": "Оба операнда целые, дробная часть отбрасывается."}, {"id": "q13", "lecture": 3, "q": "Какая строка запрещена?", "code": "int x=1, y=2;\nconst int* p=&x;", "options": ["p = &y;", "*p = 3;", "p = nullptr;"], "correct": 1, "why": "p можно перенаправлять, менять объект через const int* нельзя."}, {"id": "q14", "lecture": 3, "q": "Что напечатает перегрузка?", "code": "void f(int&) { std::cout << \"L\"; }\nvoid f(int&&) { std::cout << \"R\"; }\nint&& r = 1;\nf(r);", "options": ["L", "R", "Ошибка компиляции"], "correct": 0, "why": "Именованная r в выражении — lvalue, даже если её объявленный тип int&&."}, {"id": "q15", "lecture": 4, "q": "Какую перегрузку выбирает f(1)?", "code": "void f(int);\nvoid f(double);", "options": ["f(int)", "f(double)", "Неоднозначно"], "correct": 0, "why": "Точное совпадение int лучше преобразования в double."}, {"id": "q16", "lecture": 4, "q": "Что изменится?", "code": "void f(int x) { x=9; }\nint a=1; f(a);", "options": ["a станет 9", "a останется 1"], "correct": 1, "why": "Параметр передан по значению: изменяется копия."}, {"id": "q17", "lecture": 5, "q": "Что доступно снаружи?", "code": "class C { int x{}; public: int get() const { return x; } };\nC c;", "options": ["c.x", "c.get()", "Оба"], "correct": 1, "why": "Поля class по умолчанию private; get явно public."}, {"id": "q18", "lecture": 5, "q": "Можно ли вызвать метод?", "code": "struct C { int get() { return 1; } };\nconst C c{};\nc.get();", "options": ["Да", "Нет"], "correct": 1, "why": "get не имеет const-квалификатора и не вызывается для const-объекта."}, {"id": "q19", "lecture": 6, "q": "Каким будет вывод?", "code": "struct A { ~A(){std::cout<<\"A\";} };\nstruct B { ~B(){std::cout<<\"B\";} };\nint main(){ A a; B b; }", "options": ["AB", "BA", "Не определён"], "correct": 1, "why": "Локальные объекты уничтожаются в обратном порядке конструирования."}, {"id": "q20", "lecture": 6, "q": "Какой порядок инициализации полей?", "code": "struct C { int x; int y; C(): y(2), x(1) {} };", "options": ["y, затем x", "x, затем y"], "correct": 1, "why": "Порядок задаётся объявлением полей, а не списком после двоеточия."}, {"id": "q21", "lecture": 6, "q": "Что напечатает код?", "code": "struct T {\n T()=default;\n T(const T&) { std::cout<<\"C\"; }\n T(T&&) { std::cout<<\"M\"; }\n};\nconst T a; T b=std::move(a);", "options": ["C", "M", "CM"], "correct": 0, "why": "std::move сохраняет const, поэтому T&& не подходит, а const T& подходит."}, {"id": "q22", "lecture": 7, "q": "Что возвращает канонический префиксный ++?", "code": "T& operator++();", "options": ["Старую копию", "Ссылку на изменённый объект", "void"], "correct": 1, "why": "Префиксная форма обычно меняет *this и возвращает *this по ссылке."}, {"id": "q23", "lecture": 7, "q": "Какая сигнатура обычно подходит для вывода?", "code": "std::cout << object << \"!\";", "options": ["void operator<<(T, ostream);", "std::ostream& operator<<(std::ostream&, const T&);"], "correct": 1, "why": "Поток слева, объект справа; возврат ссылки на поток поддерживает цепочку."}, {"id": "q24", "lecture": 8, "q": "Что выведет код?", "code": "struct B { virtual int f() const {return 1;} };\nstruct D:B { int f() const override {return 2;} };\nD d; B b=d; std::cout<<b.f();", "options": ["1", "2", "UB"], "correct": 0, "why": "b — отдельный объект B, произошла срезка. Удаления через базовый указатель здесь нет."}, {"id": "q25", "lecture": 8, "q": "Что выведет код?", "code": "struct B { virtual int f() const {return 1;} };\nstruct D:B { int f() const override {return 2;} };\nD d; const B& b=d; std::cout<<b.f();", "options": ["1", "2", "Ошибка"], "correct": 1, "why": "Ссылка сохраняет обращение к D; виртуальный вызов выбирает D::f."}, {"id": "q26", "lecture": 8, "q": "Что произойдёт с вызовом d.f(2.5)?", "code": "struct B { void f(double); };\nstruct D:B { void f(int); };\nD d; d.f(2.5);", "options": ["Выбран D::f(int)", "Выбран B::f(double)", "Всегда ошибка"], "correct": 0, "why": "Имя f в D скрывает перегрузки базы. using B::f возвращает их в набор поиска."}];
+const $=s=>document.querySelector(s), $$=s=>Array.from(document.querySelectorAll(s));
+const escapeHTML=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const KEY='oop-study-v1'; let progress={known:{},repeat:{},wrong:{}}; let storageOK=true;
+try{const saved=JSON.parse(localStorage.getItem(KEY)||'null');if(saved&&typeof saved==='object'){for(const k of ['known','repeat','wrong'])if(saved[k]&&typeof saved[k]==='object'&&!Array.isArray(saved[k]))progress[k]=saved[k]}}catch(e){storageOK=false}
+let mode='read', queue=[], pos=0, shown=false, answered=false, score=0, repeatOnly=false, lastResult='';
+function save(){try{localStorage.setItem(KEY,JSON.stringify(progress))}catch(e){storageOK=false}updateProgress()}
+function updateProgress(){const n=CARDS.filter(c=>progress.known[c.id]).length;$('#progress-text').textContent=n+' / '+CARDS.length;$('#progress-bar').style.width=(n/CARDS.length*100)+'%';if(!storageOK)$('#status').textContent='Сохранение недоступно: прогресс действует до закрытия страницы.'}
+function matches(item){const l=$('#lecture-filter').value,q=$('#search').value.trim().toLocaleLowerCase('ru');return(l==='all'||item.lecture===Number(l))&&(!q||(item.q+' '+(item.a||item.why||'')+' '+(item.code||'')).toLocaleLowerCase('ru').includes(q))}
+function shuffle(items){const a=items.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function filterReading(){const l=$('#lecture-filter').value,q=$('#search').value.trim().toLocaleLowerCase('ru');let count=0;$$('.lesson').forEach(lesson=>{let any=false;const eligible=l==='all'||lesson.dataset.lecture===l;const topics=Array.from(lesson.querySelectorAll('.topic'));topics.forEach(t=>{const match=!q||t.textContent.toLocaleLowerCase('ru').includes(q);t.hidden=!match;if(match){any=true;if(q)t.open=true}});if(!topics.length)any=!q||lesson.textContent.toLocaleLowerCase('ru').includes(q);lesson.hidden=!eligible||!any;if(!lesson.hidden)count++});$('#no-results').hidden=count>0||mode!=='read'}
+function startSession(){const source=mode==='cards'?CARDS:QUESTIONS;let items=source.filter(matches);if(repeatOnly)items=items.filter(c=>mode==='cards'?progress.repeat[c.id]:progress.wrong[c.id]);queue=shuffle(items);if(mode==='quiz')queue=queue.slice(0,10);pos=0;score=0;shown=false;answered=false;lastResult='';renderTraining()}
+function setMode(next){mode=next;repeatOnly=false;$$('[data-mode]').forEach(b=>{b.classList.toggle('active',b.dataset.mode===mode);b.setAttribute('aria-pressed',String(b.dataset.mode===mode))});$('#reading').hidden=mode!=='read';$('#training').hidden=mode==='read';$('#expand').hidden=mode!=='read';$('#collapse').hidden=mode!=='read';$('#no-results').hidden=true;if(mode==='read')filterReading();else startSession()}
+function renderTraining(){const box=$('#study');$('#mode-description').textContent=mode==='cards'?'Сформулируй ответ вслух. Затем открой объяснение и оцени, смог ли вспомнить правило.':'До 10 вопросов за попытку. Вопросы идут в случайном порядке; ошибочные можно повторить отдельно.';if(!queue.length){box.innerHTML='<div class="empty"><h2>В этой подборке нет вопросов</h2><p>Измени поиск или лекцию. Для повторения сначала ответь на вопросы.</p><button class="secondary" data-action="all">Все вопросы</button></div>';return}if(pos>=queue.length){box.innerHTML='<div class="study-panel"><div class="label">ПОДХОД ЗАВЕРШЁН</div><h2>'+(mode==='quiz'?score+' из '+queue.length+' верно':'Все '+queue.length+' карточек просмотрены')+'</h2><p>Вернись к правилам, в которых сомневался, и объясни их на новом примере.</p><div class="actions"><button class="primary" data-action="restart">Ещё один подход</button><button class="secondary" data-action="repeat">'+(mode==='quiz'?'Повторить ошибки':'Повторить сложные')+'</button></div></div>';return}const item=queue[pos];let content='<div class="study-panel"><div class="counter">'+(pos+1)+' / '+queue.length+' · лекция '+item.lecture+(repeatOnly?' · повторение':'')+'</div><div class="label">'+(mode==='cards'?'ВСПОМНИ ПРАВИЛО':'РАЗБЕРИ КОД')+'</div><h2>'+escapeHTML(item.q)+'</h2>';if(mode==='cards'){content+=shown?'<div class="answer">'+escapeHTML(item.a)+'</div><div class="actions"><button class="secondary" data-action="hard">Нужно повторить</button><button class="primary" data-action="known">Запомнил</button></div>':'<p class="small">Не открывай ответ, пока не попробовал объяснить своими словами.</p><div class="actions"><button class="primary" data-action="reveal">Показать ответ</button></div>'}else{content+='<pre><code>'+escapeHTML(item.code)+'</code></pre>';item.options.forEach((o,i)=>{const cls=answered?(i===item.correct?' good':i===Number(lastResult)?' bad':''):'';content+='<button class="choice'+cls+'" data-choice="'+i+'" '+(answered?'disabled':'')+'>'+escapeHTML(o)+'</button>'});if(answered)content+='<div class="feedback">'+(Number(lastResult)===item.correct?'Верно. ':'Нужно повторить. ')+escapeHTML(item.why)+'</div><div class="actions"><button class="primary" data-action="next">'+(pos===queue.length-1?'Результат':'Следующий вопрос')+'</button></div>'}box.innerHTML=content+'</div>'}
+$('#study').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const a=b.dataset.action;if(b.dataset.choice!==undefined&&!answered){answered=true;lastResult=b.dataset.choice;const item=queue[pos];if(Number(lastResult)===item.correct){score++;delete progress.wrong[item.id]}else progress.wrong[item.id]=true;save()}else if(a==='reveal')shown=true;else if(a==='known'||a==='hard'){const id=queue[pos].id;if(a==='known'){progress.known[id]=true;delete progress.repeat[id]}else{delete progress.known[id];progress.repeat[id]=true}save();pos++;shown=false}else if(a==='next'){pos++;answered=false}else if(a==='restart'||a==='all'){repeatOnly=false;startSession();return}else if(a==='repeat'){repeatOnly=true;startSession();return}renderTraining()});
+$$('[data-mode]').forEach(b=>b.addEventListener('click',()=>{setMode(b.dataset.mode);if(b.closest('.hero'))$('#workspace').scrollIntoView({block:'start'})}));
+function refresh(){if(mode==='read')filterReading();else startSession()}
+$('#search').addEventListener('input',refresh);$('#lecture-filter').addEventListener('change',refresh);
+$('#expand').addEventListener('click',()=>$$('.lesson:not([hidden]) .topic:not([hidden])').forEach(t=>t.open=true));$('#collapse').addEventListener('click',()=>$$('.topic').forEach(t=>t.open=false));
+function navigateHash(){const hash=decodeURIComponent(location.hash.slice(1));let target=document.getElementById(hash);if(!target)return;$('#lecture-filter').value='all';$('#search').value='';setMode('read');target.hidden=false;if(target.matches('details'))target.open=true;const ancestor=target.closest('details');if(ancestor)ancestor.open=true;target.scrollIntoView({block:'start'});$$('.sidebar a').forEach(a=>a.classList.toggle('current',a.hash===location.hash))}
+window.addEventListener('hashchange',navigateHash);$('#start-init').addEventListener('click',()=>{const t=$$('.topic').find(t=>t.querySelector('summary').textContent.includes('1.6.'));if(t){location.hash=t.id;navigateHash()}});
+const extra=$$('.lesson').find(x=>x.dataset.lecture==='0');if(extra)$('#summary-link').href='#'+extra.id;
+$('#reset').addEventListener('click',()=>{if(confirm('Сбросить отметки карточек и список ошибок?')){progress={known:{},repeat:{},wrong:{}};save();if(mode!=='read')startSession()}});
+updateProgress();filterReading();if(location.hash)navigateHash();
+</script></body></html>
