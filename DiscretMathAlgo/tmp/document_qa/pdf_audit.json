@@ -1,0 +1,444 @@
+{
+  "pages": 73,
+  "issues": [],
+  "stats": [
+    {
+      "page": 1,
+      "characters": 278,
+      "drawings": 0,
+      "images": 0
+    },
+    {
+      "page": 2,
+      "characters": 474,
+      "drawings": 0,
+      "images": 0
+    },
+    {
+      "page": 3,
+      "characters": 1704,
+      "drawings": 13,
+      "images": 0
+    },
+    {
+      "page": 4,
+      "characters": 1218,
+      "drawings": 13,
+      "images": 0
+    },
+    {
+      "page": 5,
+      "characters": 1236,
+      "drawings": 26,
+      "images": 0
+    },
+    {
+      "page": 6,
+      "characters": 479,
+      "drawings": 19,
+      "images": 0
+    },
+    {
+      "page": 7,
+      "characters": 1177,
+      "drawings": 0,
+      "images": 0
+    },
+    {
+      "page": 8,
+      "characters": 1515,
+      "drawings": 24,
+      "images": 0
+    },
+    {
+      "page": 9,
+      "characters": 464,
+      "drawings": 49,
+      "images": 0
+    },
+    {
+      "page": 10,
+      "characters": 1465,
+      "drawings": 21,
+      "images": 0
+    },
+    {
+      "page": 11,
+      "characters": 2109,
+      "drawings": 23,
+      "images": 0
+    },
+    {
+      "page": 12,
+      "characters": 1160,
+      "drawings": 51,
+      "images": 0
+    },
+    {
+      "page": 13,
+      "characters": 898,
+      "drawings": 26,
+      "images": 0
+    },
+    {
+      "page": 14,
+      "characters": 1273,
+      "drawings": 51,
+      "images": 0
+    },
+    {
+      "page": 15,
+      "characters": 1377,
+      "drawings": 8,
+      "images": 0
+    },
+    {
+      "page": 16,
+      "characters": 1519,
+      "drawings": 25,
+      "images": 0
+    },
+    {
+      "page": 17,
+      "characters": 1765,
+      "drawings": 37,
+      "images": 0
+    },
+    {
+      "page": 18,
+      "characters": 2030,
+      "drawings": 20,
+      "images": 0
+    },
+    {
+      "page": 19,
+      "characters": 1205,
+      "drawings": 31,
+      "images": 0
+    },
+    {
+      "page": 20,
+      "characters": 1852,
+      "drawings": 14,
+      "images": 0
+    },
+    {
+      "page": 21,
+      "characters": 1311,
+      "drawings": 21,
+      "images": 0
+    },
+    {
+      "page": 22,
+      "characters": 1224,
+      "drawings": 69,
+      "images": 0
+    },
+    {
+      "page": 23,
+      "characters": 898,
+      "drawings": 26,
+      "images": 0
+    },
+    {
+      "page": 24,
+      "characters": 1157,
+      "drawings": 36,
+      "images": 0
+    },
+    {
+      "page": 25,
+      "characters": 472,
+      "drawings": 6,
+      "images": 0
+    },
+    {
+      "page": 26,
+      "characters": 1555,
+      "drawings": 10,
+      "images": 0
+    },
+    {
+      "page": 27,
+      "characters": 1874,
+      "drawings": 18,
+      "images": 0
+    },
+    {
+      "page": 28,
+      "characters": 1605,
+      "drawings": 36,
+      "images": 0
+    },
+    {
+      "page": 29,
+      "characters": 1597,
+      "drawings": 27,
+      "images": 0
+    },
+    {
+      "page": 30,
+      "characters": 1091,
+      "drawings": 45,
+      "images": 0
+    },
+    {
+      "page": 31,
+      "characters": 951,
+      "drawings": 31,
+      "images": 0
+    },
+    {
+      "page": 32,
+      "characters": 1258,
+      "drawings": 13,
+      "images": 0
+    },
+    {
+      "page": 33,
+      "characters": 1358,
+      "drawings": 11,
+      "images": 0
+    },
+    {
+      "page": 34,
+      "characters": 2028,
+      "drawings": 13,
+      "images": 0
+    },
+    {
+      "page": 35,
+      "characters": 2188,
+      "drawings": 12,
+      "images": 0
+    },
+    {
+      "page": 36,
+      "characters": 2047,
+      "drawings": 21,
+      "images": 0
+    },
+    {
+      "page": 37,
+      "characters": 1132,
+      "drawings": 28,
+      "images": 0
+    },
+    {
+      "page": 38,
+      "characters": 877,
+      "drawings": 35,
+      "images": 0
+    },
+    {
+      "page": 39,
+      "characters": 955,
+      "drawings": 26,
+      "images": 0
+    },
+    {
+      "page": 40,
+      "characters": 943,
+      "drawings": 29,
+      "images": 0
+    },
+    {
+      "page": 41,
+      "characters": 1276,
+      "drawings": 13,
+      "images": 0
+    },
+    {
+      "page": 42,
+      "characters": 1728,
+      "drawings": 24,
+      "images": 0
+    },
+    {
+      "page": 43,
+      "characters": 1038,
+      "drawings": 56,
+      "images": 0
+    },
+    {
+      "page": 44,
+      "characters": 1060,
+      "drawings": 6,
+      "images": 0
+    },
+    {
+      "page": 45,
+      "characters": 891,
+      "drawings": 6,
+      "images": 0
+    },
+    {
+      "page": 46,
+      "characters": 820,
+      "drawings": 16,
+      "images": 0
+    },
+    {
+      "page": 47,
+      "characters": 1272,
+      "drawings": 19,
+      "images": 0
+    },
+    {
+      "page": 48,
+      "characters": 2080,
+      "drawings": 19,
+      "images": 0
+    },
+    {
+      "page": 49,
+      "characters": 1122,
+      "drawings": 44,
+      "images": 0
+    },
+    {
+      "page": 50,
+      "characters": 775,
+      "drawings": 76,
+      "images": 0
+    },
+    {
+      "page": 51,
+      "characters": 920,
+      "drawings": 6,
+      "images": 0
+    },
+    {
+      "page": 52,
+      "characters": 1042,
+      "drawings": 20,
+      "images": 0
+    },
+    {
+      "page": 53,
+      "characters": 1823,
+      "drawings": 3,
+      "images": 0
+    },
+    {
+      "page": 54,
+      "characters": 1134,
+      "drawings": 6,
+      "images": 0
+    },
+    {
+      "page": 55,
+      "characters": 845,
+      "drawings": 6,
+      "images": 0
+    },
+    {
+      "page": 56,
+      "characters": 1123,
+      "drawings": 6,
+      "images": 0
+    },
+    {
+      "page": 57,
+      "characters": 1110,
+      "drawings": 6,
+      "images": 0
+    },
+    {
+      "page": 58,
+      "characters": 1293,
+      "drawings": 16,
+      "images": 0
+    },
+    {
+      "page": 59,
+      "characters": 1269,
+      "drawings": 16,
+      "images": 0
+    },
+    {
+      "page": 60,
+      "characters": 1534,
+      "drawings": 20,
+      "images": 0
+    },
+    {
+      "page": 61,
+      "characters": 908,
+      "drawings": 34,
+      "images": 0
+    },
+    {
+      "page": 62,
+      "characters": 818,
+      "drawings": 12,
+      "images": 0
+    },
+    {
+      "page": 63,
+      "characters": 850,
+      "drawings": 21,
+      "images": 0
+    },
+    {
+      "page": 64,
+      "characters": 500,
+      "drawings": 18,
+      "images": 0
+    },
+    {
+      "page": 65,
+      "characters": 1576,
+      "drawings": 13,
+      "images": 0
+    },
+    {
+      "page": 66,
+      "characters": 1410,
+      "drawings": 19,
+      "images": 0
+    },
+    {
+      "page": 67,
+      "characters": 976,
+      "drawings": 43,
+      "images": 0
+    },
+    {
+      "page": 68,
+      "characters": 812,
+      "drawings": 17,
+      "images": 0
+    },
+    {
+      "page": 69,
+      "characters": 1995,
+      "drawings": 24,
+      "images": 0
+    },
+    {
+      "page": 70,
+      "characters": 1850,
+      "drawings": 16,
+      "images": 0
+    },
+    {
+      "page": 71,
+      "characters": 643,
+      "drawings": 0,
+      "images": 0
+    },
+    {
+      "page": 72,
+      "characters": 2025,
+      "drawings": 17,
+      "images": 0
+    },
+    {
+      "page": 73,
+      "characters": 167,
+      "drawings": 0,
+      "images": 0
+    }
+  ]
+}
