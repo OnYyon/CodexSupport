@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ru" data-type="software" data-radius="sharp" data-motion="calm">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="page-type" content="software">
+  <meta name="site-kind" content="software">
+  <meta name="theme-color" content="#f5f4ed">
+  <meta name="description" content="Восемь законов распределения, разобранные задачи и карточки для запоминания формул.">
+  <meta property="og:title" content="Случайные величины">
+  <meta property="og:description" content="Лаборатория вероятностей с формулами и карточками.">
+  <title>Случайные величины · Лаборатория вероятностей</title>
+  <link rel="stylesheet" href="katex.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#main">К содержанию</a>
+  <header class="top">
+    <div class="wrap mast">
+      <a class="brand" href="#main"><span class="mark" aria-hidden="true">∿</span> Лаборатория вероятностей</a>
+      <nav aria-label="Разделы учебника">
+        <a href="#basics">Основы</a><a href="#discrete">ДСВ</a><a href="#continuous">НСВ</a><a href="#practice">Карточки</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="intro">
+        <p class="eyebrow">Теория вероятностей</p>
+        <h1 id="hero-title">Случайные<br>величины</h1>
+        <p class="lead">Восемь законов распределения с разобранными задачами. Научись выбирать закон по условию и вспоминать формулу без подсказки.</p>
+        <div class="actions"><a class="button primary" href="#basics">Читать конспект</a><a class="button secondary" href="#practice">Открыть карточки</a></div>
+      </div>
+      <div class="lab" aria-labelledby="lab-title">
+        <div class="lab-header"><h2 id="lab-title">Площадь под плотностью</h2><span id="probability" aria-live="polite"></span></div>
+        <canvas id="curve" role="img" aria-label="Колокол нормальной плотности с выделенной областью вокруг среднего"></canvas>
+        <div class="slider-row"><label for="radius">Границы в единицах СКО</label><output id="radius-value" for="radius"></output></div>
+        <input id="radius" type="range" min="0.25" max="3" step="0.25" value="1">
+        <div class="slider-ticks" aria-hidden="true"><span>Уже</span><span>Шире</span></div>
+      </div>
+    </section>
+    <div class="reader">
+      <div class="wrap reading-grid">
+        <aside class="outline" aria-label="Оглавление">
+          <p class="eyebrow">Конспект</p>
+          <a href="#basics">Общие формулы</a>
+          <a href="#discrete">Дискретные законы</a>
+          <a href="#continuous">Непрерывные законы</a>
+          <a href="#practice">Карточки</a>
+        </aside>
+        <div class="chapters">
+          <section id="basics" class="chapter"><h2>Общие формулы</h2><!-- FOUNDATIONS --></section>
+          <section id="discrete" class="chapter"><h2>Дискретные законы</h2><!-- DISCRETE --></section>
+          <section id="continuous" class="chapter"><h2>Непрерывные законы</h2><!-- CONTINUOUS --></section>
+          <section id="practice" class="chapter">
+            <h2>Карточки</h2>
+            <p>Вспомни ответ, сверься с формулой и отметь, удалось ли её воспроизвести. Прогресс хранится в этом браузере. В режиме повторения видны карточки, которые ещё предстоит выучить.</p>
+            <div class="practice-bar">
+              <label for="topic">Раздел <select id="topic"></select></label>
+              <label class="check"><input type="checkbox" id="review"> Только для повторения</label>
+            </div>
+            <div class="flashcard">
+              <p id="progress" class="eyebrow" aria-live="polite"></p>
+              <h3 id="question" tabindex="-1"></h3>
+              <button class="button primary" id="reveal" aria-expanded="false" aria-controls="answer">Показать формулу</button>
+              <div id="answer" hidden></div>
+              <div class="practice-actions" id="rating" hidden>
+                <button class="button secondary" id="again">На повторение</button>
+                <button class="button primary" id="known">Запомнил</button>
+              </div>
+              <div class="pagination" id="pagination">
+                <button class="button secondary" id="prev">Назад</button>
+                <button class="button secondary" id="next">Дальше</button>
+              </div>
+            </div>
+            <noscript>Для карточек и интерактивного графика включи JavaScript.</noscript>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="wrap"><a href="#main">К началу</a></footer>
+  <script type="application/json" id="card-data"><!-- CARD_DATA --></script>
+</body>
+</html>
