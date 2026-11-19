@@ -96,3 +96,16 @@ footer a { display: inline-flex; align-items: center; min-height: 44px; text-und
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+.distribution-graph { margin: 24px 0 36px; border: 1px solid var(--line); background: var(--paper); }
+.distribution-graph h4 { margin: 0; padding: 14px 18px; font-size: 1rem; }
+.graph-plot { background: var(--forest); color: var(--white); padding: 8px 12px 14px; }
+.graph-plot canvas { display: block; width: 100%; height: clamp(172px, 27vw, 242px); }
+.graph-readout { display: flex; flex-wrap: wrap; gap: 8px clamp(16px, 4vw, 32px); padding-inline: 8px; }
+.graph-readout > span { display: inline-flex; align-items: baseline; gap: 8px; }
+.graph-readout output { color: var(--lime); font-weight: 700; }
+.graph-controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 205px), 1fr)); gap: 8px 22px; padding: 16px 18px 4px; }
+.graph-control { display: grid; grid-template-columns: 1fr auto; column-gap: 8px; line-height: 1.4; }
+.graph-control output { font-weight: 700; font-variant-numeric: tabular-nums; }
+.graph-control input { grid-column: 1 / -1; width: 100%; min-height: 44px; margin: 0; accent-color: var(--forest); }
+.chapter .graph-note, .distribution-graph noscript p { margin: 0 18px 12px; color: var(--muted); font-size: .875rem; }
